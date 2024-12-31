@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+      .minwidth p{
+        font-size: large;
+      }
+      .maxwidth p{
+        font-size: large;
+      } 
+      #size{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .Media{
+        text-align: center;
+        border: 1px solid black;
+        padding: 10px;
+      }
+      @media(min-width:600px){
+        .minwidth{
+          background-color:black;
+          color:white;
+        }
+      }
+      @media(max-width:600px){
+        .maxwidth{
+          background-color:burlywood;
+          color:white;
+        }
+      }
+       @media(max-width:1200px){
+        .Media{
+          background-color:blue;
+        }
+      }
+       @media(max-width:996px){
+        .Media{
+          background-color: yellow;
+        }
+      }
+       @media(max-width:768px){
+        .Media{
+          background-color:orange;
+        }
+      }
+       @media(max-width:576px){
+        .Media{
+          background-color: green;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="minwidth">
+        <h1>min-width</h1>
+        <p>if min-width:600px means if we resize the browser above 600px the min-width will act.</p>
+      </div>
+      <div class="maxwidth">
+        <h1>max-width</h1>
+        <p>if max-width:600px means if we resize the browser below 600px the max-width will act.</p>
+      </div>
+    </div>
+    <div id="size"></div>
+    <div class="Media">
+      <h1>Hello world !</h1>
+      <p>
+        Media Query(Mobile-576px,Tablet-768px,laptop-992px,Desktop-1200px);
+      </p>
+    </div>
+    <script>
+      window.onresize = screen
+      window.onload=screen
+      function screen(){
+        mywidth = window.innerWidth;
+        document.getElementById("size").innerHTML = "width: "+mywidth +"px";
+      }
+    </script>
+    <div style="padding-bottom:1000px;"></div>
+  </body>
+</html>

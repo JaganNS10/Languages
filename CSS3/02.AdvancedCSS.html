@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    ul{
+      list-style-type:none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+      /* overflow: auto; */
+      width: 100%;
+      padding-bottom: 49px;
+    }
+    li{
+      float: left;
+    }
+    li a{
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      padding: 15px 20px;
+    }
+    li a:hover{
+      background-color: #111;
+    }
+    .lione{
+      background-color: red;
+    }
+
+    .center{
+      margin-top: 50px;
+    }
+    .center-1{
+      margin-top: 50px;
+    }
+    .center-2{
+      margin-top: 50px;
+    }
+    /*
+    align text in center
+    */
+
+    .center article{
+      text-align: center;
+      border: 2px solid black;
+      width: 50%;
+      margin: auto;
+      /* padding: 20px 20px; */
+    } 
+    .center-1 article{
+      position: absolute;
+      right: 500px;
+      border: 2px solid blue;
+      padding: 20px;
+    }
+    .center-2 article{
+      float: right;
+      width: 500px;
+      border: 2px solid orange;
+      padding: 10px;
+      margin-right: 480px;
+    }
+    #convert{
+      margin-top: 40px;
+    }
+    #convert p{
+      /* text-align: center; */
+      border: 2px solid black;
+      width: 30%;
+      text-align: center;
+      margin-left: 500px;
+      padding:20px 30px;
+    }
+  </style>
+</head>
+<body>
+    <ul>
+        <li class="lione"><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">content</a></li>
+        <li ><a href="#">About</a></li>
+    </ul>
+    <section class="center">
+      <article>
+        <p>To make this text comes into in different ways 1.text-align:center</p>
+      </article>
+    </section>
+    <section class="center-1">
+      <article>
+        <p>To make this text comes into in different ways 2.position:absolute</p>
+      </article>
+    </section>
+    <div style="padding-bottom: 100px;"></div>
+    <section class="center-2">
+      <article>
+        <p>To make this text comes into in different ways 3.float:right</p>
+      </article>
+    </section>
+    <div style="clear: both;"></div>
+    <div id="convert">
+      <p>In Html p tag occupies full width if we use border</p>
+    </div>
+</body>
+</html>

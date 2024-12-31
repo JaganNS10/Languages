@@ -1,0 +1,391 @@
+
+/*
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+*/
+.Backgrounds{
+  background-color: papayawhip;
+  /* background-repeat: repeat-x;horztial
+  background-repeat: repeat-y; * vertical
+  background-repeat: no-repeat;*/
+}
+body{
+  margin-right:500px;
+  background-image:url(Five.webp);
+  background-repeat: no-repeat;
+  /* background-attachment: fixed;*/
+  background-attachment: scroll;
+  background-position: right top;
+}
+/*(border)
+border-style
+border-width
+border-color
+*/
+.Backgrounds h1{
+  border-style:solid;
+  /*
+  border-style:dashed;
+  border-style:outset;
+  border-style: inset; 
+  */
+  border-width: thick;
+  /* border-width: 5px 20px; 5px for top,bottom 20px for left,right*/
+  border-color: aqua;
+  /* border-color: red blue yellow orange; red-top,blue-right,yellow-bottom,orange-left 
+  border-style: dashed solid;*/
+  border-radius: 10px;
+}
+
+/*(outline)
+outline-color
+outline-style
+outline-width
+outline-offset
+*/
+#Height{
+  border: 2px solid black;
+  outline-style:solid;
+  outline-color: burlywood;
+  outline-width: 15px;
+  /* outline-offset: 15px; */
+
+}
+
+/*(Text)
+Text color
+*color
+
+Text Alignment
+*text-align
+*text-align-last
+
+Text Decoration
+*text-decoration-line
+*text-decoration-color
+*text-decoration-style
+*text-decoration-thickness
+
+Text-Transform
+*text-transform
+
+Text spacing
+*text-indent
+*line-height
+*letter-spacing
+*word-spacing
+
+*/
+
+#Height{
+  text-align:center;
+  /* text-decoration-line:line-through;
+  text-decoration-line:overline;
+  text-decoration-line:underline; */
+}
+#Height a{
+  /* text-decoration: none; */
+  text-decoration-color:rgb(255,0,0);
+  text-decoration-style: wavy;
+  text-decoration-thickness:2px;
+}
+
+#Height h1{
+  text-transform: uppercase;
+  /* text-transform: lowercase;
+  text-transform: capitalize; */
+}
+
+#Height{
+  text-indent: 50px;
+  letter-spacing: 2px;
+  line-height:1.8;
+  word-spacing:20px;
+  /* white-space:nowrap; */
+}
+
+
+/*(font)
+font-family
+font-style
+font-weight
+font-variant
+font-size(pixels/16=em)
+font-google(<link rel="stylesheet" href = "https://fonts.googleapis.com/css?family=Sofia">)
+*/
+.class-01{
+  font-family: Arial, Helvetica, sans-serif;
+  font-variant: small-caps;
+  font-style:italic;
+  font-weight: 100;
+  /* font-size: 40px; */
+  /* convert px into em 40px/16=2.5em */
+}
+
+/*
+Links
+a:link-change the link color
+a:visited-if the Link is visited it change the color
+a:hover-if we get the mouse near the link 
+a:active-if we click the link
+<a href="" target=_blank target=_self> _blank means it opens in new window
+*/
+#Height a:link{
+  color: black;
+}
+/* #Height a:visited{
+  color:blue; if Link is visited it changed into blue
+} */
+
+#Height a:hover{
+  color:aqua;
+}
+
+#Height a:active{
+  color:chartreuse;
+}
+
+
+ol{
+  list-style-type: circle;
+  list-style-type: upper-roman;
+  list-style-type: lower-alpha;
+  list-style-position:inside;
+}
+ul{
+  list-style-type: circle;
+  /* list-style-type: square; */
+  list-style-type: none;
+  list-style-type: upper-roman;
+  background-color:#ff9999;
+  padding:20px;
+}
+
+/* ol li{
+  padding: 20px 0;
+  color: cadetblue;
+} */
+ul li{
+  background-color:#cce5ff;
+  color:darkblue;
+  margin: 5px;
+}
+
+/*
+Block-level
+*<div>
+*<p>
+*<h1><h6>
+*<form>
+*<header>
+*<footer>
+*<section>
+
+Inline-level 
+*<span>
+*<img>
+*<a>
+*/
+
+span{
+  display: block;
+  /* display: inline; */
+}
+#decc li{
+  display: inline;
+}
+
+/*
+max-width
+min-width
+*/
+
+.width{
+  /*width-500px*/
+  max-width:500px;
+  margin: auto;
+  border: 1px solid black;
+  padding: 10px 10px;
+}
+
+/*
+position property
+*static
+*relative
+*fixed
+*absolute
+*sticky
+*/
+
+#positioncss{
+  background-color: black;
+  color:white;
+}
+#position{
+  /* position: static; */
+  /* position: relative; */
+  /* position: absolute; */
+  top:100px;
+  left:300px;
+  border: 2px solid blueviolet;
+}
+
+#Fixed{
+  background-color: black;
+  color:white;
+  font-size: large;
+  padding: 10px 20px;
+  position: fixed;
+  right:0;
+  bottom: 0;
+}
+#Sticky{
+  background-color: black;
+  color: white;
+  font-size: large;
+  padding: 10px 20px;
+  text-align: center;
+  position:sticky;
+  top:0;
+}
+.Relative{
+  position: relative;
+  top:20px;
+}
+.Absolute{
+  position: absolute;
+  top:200px;
+  border: 2px solid black;
+}
+
+
+/* overflow
+visible 
+hidden
+scroll
+auto
+overflow-x:horizontal left-right
+overflow-y:vertical top-bottom*/
+
+#OverFlow{
+  margin-top:120px;
+  width: 200px;
+  height:150px;
+  border: 1px solid orangered;
+  /* overflow: visible; */
+  /* overflow: hidden; */
+  /* overflow: scroll; */
+  /* overflow: auto; */
+  overflow-x:hidden;
+  overflow-y: scroll;
+}
+
+.one{
+  background-color: #cce5ff;
+  width:10%;
+  text-align: center;
+  padding: 20px 20px;
+}
+.two{
+  background-color:yellowgreen;
+  width:10%;
+  text-align: center;
+  padding: 20px 20px;
+}
+.three{
+  background-color:palevioletred;
+  width:10%;
+  text-align: center;
+  padding: 20px 20px;
+}
+#float-div div{
+  float:left;/*id have the higher priority then class*/
+}
+/*
+display:inline
+display:inline-block
+display:block
+*/
+#display p{
+  /* display: inline; */
+  display: inline-block;
+}
+#display a{
+  display:block
+}
+/*
+Css selectors
+Descendant selector(space)
+child selector(>)
+adjacent sibling(+)
+child sibling(~)
+*/
+
+
+/* #selector p{
+  background-color: azure;
+} */
+
+.selector > p{
+  background-color: #cce5ff;
+}
+
+
+.selector + p{
+  background-color: yellow;
+}
+
+/* .selector ~ p{
+  background-color: navajowhite;
+} */
+
+#pseudo button{
+  display: none;
+  padding: 15px 20px;
+}
+#pseudo:hover button{
+  display: block;
+}
+
+/*pseudo-elements
+:first-child
+:last-child
+:nth-child(2)
+:nth-last-child(6)//see from reverse order
+::after
+::before
+*/
+
+/* .child li:first-child{
+  background-color: #ff9999;
+}
+.child li:last-child{
+  background-color: aqua;
+}
+.child li:nth-child(2){
+  background-color: #cce5ff;
+}
+.child li:nth-last-child(3){
+  background-color: yellow;
+} */
+.child li:nth-child(odd){
+  background-color: cadetblue;
+}
+.child li:nth-child(even){
+  background-color: black;
+  color: white;
+}
+
+.child::after{
+  content: "-- content finished using ::after";
+  font-size: large;
+  font-weight: bold;
+}
+.child::before{
+  font-size: large;
+  font-weight: bold;
+  content: "-- content started ::before";
+}

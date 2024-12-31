@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible Box Model</title>
+  <style>
+    body{
+      margin: 20px;
+      padding: 0;
+    }
+    .container{
+      display:flex;
+      /* align-items: start;
+      align-items: center;
+      align-items:end; */
+      /* flex-wrap: wrap; */
+      /* flex-direction: column; */
+    }
+    .container-2{
+      display: flex;
+      /* margin:10px; */
+      /* justify-content: start;
+      justify-content: end;
+      justify-content: space-around; 
+      */
+      justify-content: space-between;
+    }
+    .box-01{
+      /* width: 25%; 
+      if we use width for indiviual element it act for each element
+      */
+      flex-basis: 25%;
+    }
+    .container div,.container-2 div{
+      border: 1px solid black;
+      padding:20px;
+    }
+    .box-1{
+      flex: 1;
+      order: 2;
+    }
+    .box-2{
+      flex: 1;
+      order: 3;
+    }
+    .box-3{
+      flex: 2;
+      order: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box-1">
+      <h3>Box-1</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid</p>
+    </div>
+    <div class="box-2">
+      <h3>Box-2</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid</p>
+    </div>
+    <div class="box-3">
+      <h3>Box-3</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid</p>
+    </div>
+  </div>
+  <div class="container-2">
+    <div class="box-01">
+      <h3>Box-1</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, ut. Ad harum exercitationem facilis in cum iure voluptate, eaque id accusantium dolorum quis hic repellat nam debitis mollitia doloremque nihil?
+      </p>
+    </div>
+    <div class="box-01">
+      <h3>Box-2</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, tempore dignissimos esse voluptas quidem nostrum recusandae voluptates ducimus ipsum vel unde, dolore odio illum temporibus earum? A maxime nulla impedit.
+      </p>
+    </div>
+    <div class="box-01">
+      <h3>Box-3</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem amet maxime quidem itaque, voluptates corporis quaerat deserunt beatae assumenda nulla perspiciatis repellat at, tempore voluptate sed laboriosam laudantium ad repellendus.
+      </p>
+    </div>
+  </div>
+  <div style="margin-top: 100px;" class="Align">
+    <p>align-items used for rows top-bottom justify-content is used for columns left to right</p>
+  </div>
+</body>
+</html>

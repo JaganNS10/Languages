@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Forms</title>
+  <style>
+    #Forms{
+      background-color:gray;
+      width: 25%;
+      margin-left: 500px;
+      padding-left: 20px;
+      padding-top: 20px;
+      border-radius: 10px;
+    }
+    #Forms label{
+      font-size: large;
+      margin: 10px 10px;
+    }
+    #Forms input{
+      margin: 20px 10px;
+      padding: 10px 150px 10px 10px;
+    }
+    #Forms select{
+      margin: 20px 10px;
+      padding: 10px 245px 10px 10px;
+      border-radius: 10px;
+    }
+    #Forms #Button{
+      padding: 10px 20px;
+      font-size: medium;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-left: 115px;
+      margin-bottom: 40px;
+      background-color: #4CAF50;
+      color: white;
+    }
+    table{
+      margin-top: 100px;
+      margin-left: 400px;
+      text-align: center;
+      border: 2px solid black;
+      border-collapse:collapse;
+    }
+    table th,table td{
+      padding: 15px;
+      border: 2px solid black;
+    }
+    table tr{
+      background-color:gray;
+      color:lightgray;
+    }
+    table tr:nth-child(even){
+      background-color: #f2f2f2;
+      color: black;
+    }
+    table tr:hover{
+      background-color:cadetblue;
+    }
+    table #Thead{
+      background-color: #4CAF50;
+      color: black;
+    }
+    table #Thead:hover{
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <form id="Forms">
+      <label>First Name</label><br>
+      <input type="text" name="Firstname" placeholder="Enter FirstName" ><br>
+      <label>Last Name</label><br>
+      <input type="text" name="Lastname" placeholder="Enter LastName"><br>
+      <label>Country</label><br>
+      <select name="Country">
+        <option>India</option>
+        <option>America</option>
+        <option>Russia</option>
+      </select>
+      <button id="Button" onclick="Names()">Submit</button>
+    </form>
+  </div>
+  <script>
+    const Values = []
+    /*function Name_validate(){
+      let x = document.forms["Forms"]["Firstname"]
+      Values.push(x.value)
+      let y = document.forms['Forms']["Lastname"]
+      Values.push(y.value)
+      let z = document.forms['Forms']["Country"]
+      Values.push(z.value)
+      alert(Values)
+    }*/
+    function Names(){
+      let x = document.forms["Forms"]
+      for(let i=0;i<x.length-1;i++){
+        let name = x.elements[i].name
+        let value = x.elements[i].value
+        Values.push(name+":"+value)
+      }
+      console.log(Values)
+      alert(Values)
+    }
+        
+    </script>
+    <div>
+      <table>
+        <thead>
+          <tr id="Thead">
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone-number</th>
+            <th>Address</th>
+            <th>DOB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jagan</td>
+            <td>19</td>
+            <td>7904136090</td>
+            <td>No:297 Rajaji Street Tv puram ponneri</td>
+            <td>10-01-2005</td>
+          </tr>
+          <tr>
+            <td>Jagan</td>
+            <td>19</td>
+            <td>7904136090</td>
+            <td>No:297 Rajaji Street Tv puram ponneri</td>
+            <td>10-01-2005</td>
+          </tr>
+          <tr>
+            <td>Jagan</td>
+            <td>19</td>
+            <td>7904136090</td>
+            <td>No:297 Rajaji Street Tv puram ponneri</td>
+            <td>10-01-2005</td>
+          </tr>
+          <tr>
+            <td>Jagan</td>
+            <td>19</td>
+            <td>7904136090</td>
+            <td>No:297 Rajaji Street Tv puram ponneri</td>
+            <td>10-01-2005</td>
+          </tr>
+          <tr>
+            <td>Jagan</td>
+            <td>19</td>
+            <td>7904136090</td>
+            <td>No:297 Rajaji Street Tv puram ponneri</td>
+            <td>10-01-2005</td>
+          </tr>
+          <tr>
+            <td>Jagan</td>
+            <td>19</td>
+            <td>7904136090</td>
+            <td>No:297 Rajaji Street Tv puram ponneri</td>
+            <td>10-01-2005</td>
+          </tr>
+          <tr>
+            <td>Jagan</td>
+            <td>19</td>
+            <td>7904136090</td>
+            <td>No:297 Rajaji Street Tv puram ponneri</td>
+            <td>10-01-2005</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</body>
+</html>
