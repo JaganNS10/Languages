@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Async In Javascript</title>
+</head>
+<body>
+  <div>
+    <h1>Async In Javascript</h1>
+  </div>
+  <p id="demo"></p>
+  <script>
+    /*
+    Different callback functions
+    what is callback function:if we pass a function as a argument in another function 
+    it is called callback function
+    */
+
+
+    function call(some){
+      document.getElementById('demo').innerHTML = some
+    }
+    function MyFunction(num1,num2,mycallback){
+      console.log(mycallback)//mycallback = call
+      let sum = num1+num2
+      mycallback(sum)//mycallback(sum) = call(sum)
+    }
+    MyFunction(10,20,call);
+
+    const Arr = [-1,2,3,4,-10,-90,45]
+    const Positive = []
+    // Arr.forEach(element => {
+    //   if(element>=0){
+    //     Positive.push(element)
+    //   }
+    // });
+    // console.log(Positive)
+    Arr.forEach(Fun)
+    function Fun(value){
+      if(value>=0){
+        Positive.push(value)
+      }
+    }
+    console.log(Positive)
+
+    const pos  = removeneg(Arr,(x)=>x>=0)
+    function removeneg(Arr,callback){
+      const Myarr = []
+      for(let x of  Arr){
+        if(callback(x)){
+          Myarr.push(x)
+        }
+      }
+      return Myarr
+    }/*
+    const callback = (x)=>x>0
+    callback(x) callback(-1),callback(2)
+    */
+    console.log(pos)
+
+    const Pos_Myarr = []
+    const Pos = (Arr)=>{
+      for(let x of Arr){
+        if(x>=0){
+          Pos_Myarr.push(x)
+        }
+      }
+    }
+    Pos(Arr)
+    console.log(Pos_Myarr)
+  </script>
+  <p id="demo-1"></p>
+  <p id="demo-2"></p>
+  <script>
+    /*Arr.sort((a,b)=>{return a-b})
+    console.log(Arr) compare function*/
+
+    /*settimeout(Settimeout,3000)
+    function Settimeout(){
+      document.getElementById('demo-1').innerHTML = 'Hello Javascript This is settimeout function'
+    }*/
+
+    // setTimeout(() => {
+    //   document.getElementById('demo-1').innerHTML = 'Hello  Javascript This is settimeout() function'
+    //   console.log("This is settimeout() exceute after 2000milisecond")
+    // },2000);
+
+    // function SetInterval(){
+    //   const date = new Date()
+    //   document.getElementById('demo-2').innerHTML = date.getDate()+":"+date.getDay()
+    //   console.log("This is setInterval() exceute every 2000 milisecond")
+    // }
+    // setInterval(SetInterval,2000)
+  </script>
+  <script>
+    let mypromise = new Promise(function(myresolve,myreject){
+      let x=0;
+      if(x==0){
+        myresolve("ok")
+      }
+      else{
+        myreject("Error")
+      }
+    })
+    console.log(mypromise)
+    mypromise.then(function(value){console.log(value)},function(Error){console.log(Error)})
+    /*
+    function myresolve(value){
+      console.log(value)
+    }
+    myresolve("Ok")//code is successfull
+
+    function myreject(Error){
+    console.log(Error)
+    }
+    myreject('Error')//code if rejected
+    */
+
+
+    const pro = new Promise(function(myresolve,myreject){
+      function another_function(){
+        myresolve('i love india')
+      }
+      setTimeout(another_function,3000)
+      // setTimeout(()=>{myresolve('i love india')},3000)
+    })
+    pro.then(function(value){console.log(value)})
+
+    /*let Arrow = function(value){return value>0} function expression
+    console.log(Arrow(1))
+
+    let arrow = (value)=>{return value>0}
+    console.log(arrow(2))
+    both are same if we donot mention function keyword we can use => arrow function
+    */
+  </script>
+  <p id="demo-3"></p>
+  <script>
+    //async await 
+
+    async function using_async(){
+      return 'Hello this is done by async without promises'
+    }
+    using_async().then((value)=>{console.log(value)})
+
+
+    async function using_await(){
+      const myPromise = new Promise(function(myresolve,myreject){
+        myresolve('hello world this await');
+      })
+      document.getElementById('demo-3').innerHTML = await myPromise;
+      console.log(myPromise)
+    } 
+    using_await();
+
+    async function await_async(){
+      const Promises = new Promise(function(myresolve,myreject){
+        function To_call(){
+          myresolve("Hello this is done my Named function")
+        }
+        setTimeout(To_call,3000)
+      })
+      Promises.then((value)=>{console.log(value)})
+      console.log('using await: '+await Promises)
+    }
+    await_async()
+   </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Functions</title>
+</head>
+
+<body>
+  <h1>This page about Functions</h1>
+  <div>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis commodi sapiente illo<br>cum quidem. Minima voluptas
+    ipsa maxime beatae deleniti, soluta, quidem<br> exercitationem quaerat aliquam quas nisi dolorum consectetur iure?
+  </div>
+  <p id="use_this_myfunction_one"></p>
+  <p id="use_this_myfunction_two"></p>
+  <p id="use_this_myfunction_three"></p>
+  <script>
+    function myfunction_one(paramater1, paramater2) {
+      return paramater1 * paramater2
+    }
+    let Result = myfunction_one(2, 4)
+    // document.getElementById('use_this_myfunction_one').innerHTML = "calling the Function:  " + Result
+
+    // myfunction_two(12,12)//hoisted function
+    function myfunction_two(paramater1, paramater2) {
+
+      document.getElementById('use_this_myfunction_two').innerHTML = 'value of: ' + paramater1 * paramater2
+    }
+
+    function myfunction_three() {
+      let myname;
+      myname = 'jagan';
+      document.getElementById('use_this_myfunction_three').innerHTML = 'Your name pls: ' + myname
+    }
+    // myfunction_three()
+    // document.getElementById('use_this_2').innerHTML = myname//we cannot access local variable outside the function
+  </script>
+  <button onclick="alert(Result)">click</button>
+  <button onclick="myfunction_two(12,12)">click</button>
+  <button onclick="myfunction()">click</button>
+  <script>
+    //Data types
+
+    //numbers
+    let x=17;
+    var y=17.5;
+    console.log(typeof x)
+    console.log(typeof y)
+
+    //strings
+    let z = 'jagan';
+    var a = "hemanth"; 
+    console.log(typeof z);
+    console.log(typeof a);
+
+    //boolean
+    let b = true
+    var a = false //var can be reassigned 
+    console.log(typeof a);
+
+    //objects
+
+    const dict = {'Rollno':1,'Name':'Jagan','Email':'jagan10ns@gmail.com'}
+    console.log(typeof dict);
+
+    // array objects
+
+    const arr = [1,'jagan','jagan10ns@gmail.com']
+    console.log(arr);
+
+    //Date object
+    const date = new Date('2024-05-27')
+    console.log(date);
+  </script>
+</body>
+
+</html>

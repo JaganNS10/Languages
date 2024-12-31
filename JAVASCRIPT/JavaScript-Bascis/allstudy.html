@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Revision of Javascript</title>
+</head>
+
+<body>
+  <p id="demo"></p>
+  <p id="demo-1"></p>
+  <p id=demo-2></p>
+  <h1>All Javascript Concepts</h1>
+  <script>
+    const Direct_value = { Firstname: "Hemanth", Lastname: "Kumar", Age: 23 }
+    console.log(Direct_value)
+
+    const Using_Braces = {}
+    Using_Braces.Firstname = "Jagan"
+    Using_Braces.Lastname = "N.S"
+    Using_Braces.Age = 23
+    console.log(Using_Braces)
+
+    const Using_Constructor = new Object()
+    Using_Constructor.Firstname = "Senthil"
+    // Using_Constructor.Lastname = "Kumar"
+    // Using_Constructor.Age = 56
+
+    console.log(Using_Constructor)
+
+    function Using_Function(Firstname, Lastname, Age) {
+      this.Firstname = Firstname
+      this.Lastname = Lastname
+      this.Age = Age
+    }
+    Using_Function.prototype.work = ""
+    let Object1 = new Using_Function("Jothi", "lakshmi", 49)
+    Object1.work = "HOUSE-wife"
+    console.log(Object1)
+    let Object2 = new Using_Function("Thilaga", "Perima", 54)
+    Object2.work = "Govt"
+    Using_Function.prototype.Access_Method = function () {
+      return this.Firstname + this.Lastname
+    }
+
+    function Act_as_function(name, age, salary, area) {
+      this.Name = name
+      this.Age = age
+      this.Salary = salary
+      this.Area = function (Para) {
+        return this.Name + this.Age + Para
+      }
+      return this.Name + this.Age
+    }
+    const Object3 = new Act_as_function("Jagan", 18, 29000)
+    let x = Act_as_function("Hemanth", 23, 27800, "ponneri")
+  </script>
+  <script>
+    var str = "H e m a n t h K u m a r"
+    var str2 = "N.S"
+    let store = str.split(" ")
+    let Index = str.indexOf("H")
+    let Index_last = str.matchAll("m")
+    var Start = str.includes("iss")
+    console.log(Start)
+  </script>
+  <script>
+
+    const arr = []
+    const Obj = {}
+
+    const set = new Set()
+    set.add("Hello")
+    set.add("world")
+    set.add("this")
+    set.add("is")
+    set.add("Javascript")
+
+    const map = new Map()
+    map.set(1, "Jagan")
+    map.set(2, 'Hemanth')
+    map.set(3, "adi")
+
+    const Arr = [{ name: "apple", Q: 300 }, { name: "banana", Q: 500 }, { name: "orange", Q: 200 }]
+    function call({ Q }) {
+      if (Q > 200) {
+        return "Q greater then 200"
+      }
+      else {
+        return "Q less than 200"
+      }
+    }
+    const Res = Map.groupBy(Arr, call)
+    console.log(Res)
+  </script>
+  <form id="forms">
+    <label>Age</label>
+    <input type="number" name="Number">
+    <button onclick="Try()">Submit</button>
+  </form>
+  <script>
+    function Try() {
+      try {
+        let forms = document.forms["forms"]["Number"].value
+        if (forms < 18 || forms == "") throw "Your age is under 18 or Age is complusory"
+        else {
+          alert("Your age is above 18")
+        }
+      }
+      catch (error) {
+        alert(error)
+      }
+      finally {
+        alert("always runs finally block")
+      }
+    }
+  </script>
+  <script>
+    class Main {
+      constructor(Firstname, Lastname) {
+        this.Firstname = Firstname
+        this.Lastname = Lastname
+      }
+    }
+    class Main_Two extends Main {
+      constructor(Firstname, Lastname, Age) {
+        super(Firstname, Lastname)
+        this.Age = Age
+      }
+      Display() {
+        return `${this.Firstname}  ${this.Lastname}  ${this.Age}`
+      }
+    }
+    class Main_three extends Main {
+      constructor(Firstname, Lastname, address) {
+        super(Firstname, Lastname)
+        this.Address = address
+      }
+      Display() {
+        return this.Firstname + " " + this.Lastname + " " + this.Address
+      }
+    }
+    const Obj_for_Main_Two = new Main_Two("Jagan", "N.S", 23)
+    const Obj_for_Main_three = new Main_three("Hemanth", "Kumar", "No:297Rajaji Street Tv puram ponneri")
+    // console.log(Obj_for_Main_Two.Display())
+    // console.log(Obj_for_Main_three.Display())
+  </script>
+  <script>
+    class Class {
+      constructor({ Name }) {
+        this.Name = Name
+      }
+    }
+    class Single extends Class {
+      constructor(Name, Age) {
+        super(Name)
+        this.Age = Age
+      }
+      Display() {
+        return this.Name + " " + this.Age
+      }
+    }
+    class One extends Class {
+      constructor({ Age, salary, ...args }) {
+        super(args)
+        console.log(args)
+        this.Age = Age
+        this.Salary = salary
+      }
+    }
+    class Two extends One {
+      constructor({ Phno, ...args }) {
+        console.log(args)
+        super(args)
+        this.Phone = Phno
+      }
+      Display() {
+        return this.Name + " " + this.Age + " " + this.Phone + " " + this.Salary
+      }
+    }
+    const object = new Two({ Name: "Senthil Kumar", Age: 56, salary: 20000, Phno: 9381458823 })
+    // const cl = {Firstname:"Jagan",Age:19,salary:89000}
+    // let {Firstname,...args} = cl
+    // console.log(Firstname,args)
+    const Objects = new Single({ Name: "Jagan" }, 29)
+    console.log(Objects.Display())
+    console.log(object.Display())
+  </script>
+  <script>
+    class hello {
+      constructor(name, salary) {
+        this.name = name
+        this.salary = salary
+      }
+    }
+    class Hello extends hello {
+      constructor(name, salary, age) {
+        super(salary, name)
+        this.age = age
+      }
+    }
+    const ob = new Hello(name = "Jagan", salary = 45000, age = 19)
+    console.log(ob.name)
+  </script>
+  <script>
+    const o = { Fi: "Jagan", la: "N.s" }
+    const b = { lan: "Tamil" }
+    Object.assign(o, b)
+    console.log(o)
+
+    Object.defineProperty(o, "Fi", { value: "Hemanth" })
+    console.log(o)
+    Object.defineProperty(o, "la", { enumerable: false })
+    console.log(Object.values(o))
+
+    Object.defineProperty(b, "get", { get: function () { return this.lan } })
+    Object.defineProperty(b, "set", { set: function (value) { this.Year = value } })
+    console.log(b.get)
+    b.set = 2024
+    console.log(b.Year)
+
+    function My() {
+      return "Hello"
+    }
+    console.log(My())
+    const expression = function () { return "Hello" }
+    console.log(expression())
+  </script>
+  <script>
+    const Promises = new Promise(function(fullfilled,rejected){
+      let x = 1
+      if(x==0){
+        fullfilled("ok")
+      }
+      else{
+        rejected("Notok")
+      }
+    })
+    Promises.then(function(value){console.log(value)},function(error){console.log(error)})
+
+    const Async = new Promise(function(fullfilled){
+      function Await(){
+        fullfilled("Hello")
+      }
+      setTimeout(Await,2000)
+    })
+    Async.then(function(value){console.log(value)})
+
+    async function using_async(){
+      const Pro = new Promise(function(fullfilled,rejected){
+        function My(){
+          fullfilled("this is async")
+        }
+        setTimeout(My,3000)
+      })
+      console.log(await Pro)
+      console.log(Pro)
+    }
+    using_async()
+  </script>
+  <form id="form">
+    <label>Firstname</label>
+    <input type="text" name="Enter" value="Enter the name">
+    <label>Firstname</label>
+    <input type="text" name="Enter" value="Enter the ">
+  </form>
+  <script>
+    const xx = document.forms['form']
+    for(let i=0;i<xx.length;i++)
+    {
+      console.log(xx.elements[i].value)
+    }
+    console.log(xx)
+  </script>
+</body>
+
+</html>

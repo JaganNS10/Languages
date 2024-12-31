@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>object constructor</title>
+</head>
+<body>
+  <div>
+    <h1>To create Object within Function</h1>
+  </div>
+  <p id="demo"></p>
+  <script>
+    const Creating_method = {firstname:'jagan',lastname:"N.S",Method:function(){
+      return Creating_method.firstname +" "+this.lastname
+      
+    }}//we can use this or object name both are same.but using this is best way.suppose if we create mutiple Objects in one function we cannot change the Objects name for same function..by using this it denote the current Object name  [this==self]
+    document.getElementById('demo').innerHTML = Creating_method.Method();
+  </script>
+
+  <p id="demo-2"></p>
+
+  <script>
+
+    function Object_Function(firstname,lastname,age,salary){
+      this.first=firstname;
+      this.last=lastname;
+      this.Age =age;
+      this.sal =salary;
+      return `My name is ${this.first} ${this.last} and My Age is ${this.Age} and My salary was ${this.sal}`
+    }
+
+    //The same Function Method acts as Function using this Function we can create objects using (new) keyword
+
+    const object_one = new Object_Function("Jagan","N.S",19,"None")//creating Object using new keyword not Function
+
+    let call = Object_Function("jagan","N.S",19,80000)//calling the Function only Funtion not Object
+
+    document.getElementById('demo-2').innerHTML = call
+
+  
+    // console.log(object.Object_Function()) // this will reference error because we cannot return the statement using object
+  </script>
+
+  <script>
+
+    //Adding new value
+    object_one.language =  "English"
+    console.log(object_one)
+
+    //creating new object with same Function
+
+    const object_Two = new Object_Function("Hemanth","N.S",23,27800)
+    //In this New Object language property will not come because language only created for object_one only to add language in all Object or creating new objects use (prototpe)
+
+    Object_Function.prototype.language = "English"
+
+    console.log(object_Two.language)
+
+    //creating new Object with prototpe 
+    const object_three = new Object_Function("jothi","s",47,"highest salary in world")
+    object_three.language = 'Tamil'
+    console.log(object_three.language)
+  </script>
+  <p id="demo-3"></p>
+  <p id="demo-4"></p>
+  <script>
+    // To overcome this problem 
+
+     /*function Object_Function(firstname,lastname,age,salary){
+      this.first=firstname;
+      this.last=lastname;
+      this.Age =age;
+      this.sal =salary;
+      return `My name is ${this.first} ${this.last} and My Age is ${this.Age} and My salary was ${this.sal}`
+    }*/
+    // console.log(object.Object_Function()) // this will reference error because we cannot return the statement using object
+
+    function Using_This_Funtion_both_Funtion_and_CreatingObjects(name,rollno,Class){
+      this.Name = name;
+      this.Rollno = rollno;
+      this.Class = Class;
+      this.school = "Sgrvv"//default property
+      //This return is for Function
+
+      this.To_return_using_Object = function(){
+        return `NAME:${this.Name}ROLLNO:${this.rollno}CLASS:${this.Class}SCHOOL:${this.school}`//This return is for Object
+      }
+      return `NAME:${this.Name}  ROLLNO:${this.Rollno}   CLASS:${this.Class}   SCHOOL:${this.school}`
+    }
+    const Object_name = new Using_This_Funtion_both_Funtion_and_CreatingObjects("Mohit",18,"BSC.computerscience")
+    let Calling_Function = Using_This_Funtion_both_Funtion_and_CreatingObjects("sabari",40,"BCA")
+
+    //printing the results
+    document.getElementById('demo-3').innerHTML = "Return statement for Object:"+" "+Object_name.To_return_using_Object()
+    document.getElementById('demo-4').innerHTML = "Return statement for Function:    "+" "+Calling_Function
+
+    //add a method to Existing Object
+    Object_name.address = function(addr){
+      this.Address = addr
+    }
+    Object_name.address("No:297 Rajaji street Tv puram ponneri")//Function name
+    console.log(Object_name.Address)
+  </script>
+</body>
+</html>

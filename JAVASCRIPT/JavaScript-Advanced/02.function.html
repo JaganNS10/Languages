@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Advanced-Javascripts-Functions</title>
+</head>
+<body>
+  <div>
+    <h1>Types of Function</h1>
+    <h2>Function</h2>
+    <h2>Function expression</h2>
+  </div>
+  <p id="demo-1"></p>
+  <script>
+    function My_Function(){
+      return 'Hello world'
+    }
+    document.getElementById('demo-1').innerHTML = My_Function()
+
+    //using Expression function expression
+    const x = function(){return 'Hello world'}
+    console.log(x())
+
+    const y = function(a,b){return a*b}
+    console.log(y(10,20))
+
+    const z = (a,b) =>{return a+b}
+    console.log(z(10,20))
+
+    //In above three Function the Expressions x,y,z are considered as function so use parentheses before that expression like x(),y(),z()
+
+    //using ... it is called spread [10,20,30] ==*args in python (10,20,30)
+
+    function My_Function2(...args){
+      let sum=0
+      for(let i  of  args){
+        sum+=i
+      }
+      return sum
+    }
+    let Return = My_Function2(10,20,30,40,50,60) //it will return sum to Return 
+    console.log(Return)
+  </script>
+  <script>
+    //using call(Objectname,arguments), apply(Object,array)
+  const Obj = {
+      Method:function(Clg){
+        // this.Clg = clg
+        return this.firstname + " " +this.lastname +" "+Clg
+      }
+    }
+    const Obj1 = {firstname:"Hemanth",lastname:"Kumar"}
+    let a = Obj.Method.call(Obj1,"RMk")
+    console.log(a)
+
+    /*const obj = {First:"Jagan",Last:"n.s",get Method(){return this.First + " "+ this.Last}} we cannot use set get using call and apply because they are not using function*/
+
+    const obj = {Method:function(Age,clg){return this.First+" "+this.Last +" "+Age +" "+clg}}
+    const Obj2 = {First:"Jagan",Last:"N.S"}
+    console.log(obj.Method.apply(Obj2,[19,"Rkmvc"]))
+
+    /*
+    what is the use of call(),apply() if we have two Objects.One having Only property.second have method.we can use the second Object method By First One Object by call,apply.
+    */
+   const Obj4 = {Method:function(){return this.First + " "+ this.Last},Method2:function(sal,Age){return sal+ " " +Age}}
+
+   const Ob = {First:"Hemanth",Last:"Kumar"} 
+   console.log(Obj4.Method.call(Ob) + " "+Obj4.Method2.apply(Ob,[27800,23]))
+
+   function Global_variable(){
+    a=10;
+   }
+   Global_variable()
+   console.log("Global variable: "+a*a)//variable created without declearation keyword are always global even it is inside the function
+
+   function add(){
+    let counter = 0;
+    function plus(){
+      counter+=1;
+    }
+    // return counter output:0
+    plus()
+    return counter //output:1
+   }
+   console.log(add())
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Scope In Javascript</title>
+</head>
+<body>
+  <div>
+    <ol>
+      <li>local scope-let,const</li>
+      <li>Global scope-var</li>
+      <li>Function scope</li>
+    </ol>
+  </div>
+  <script> 
+    {
+      let a = "cars"
+      console.log("let:block or local scope: "+a)
+    }
+    // console.log(a) we cannot let outside the block
+    {
+      var b = "bikes"
+      console.log("var:Block or local and global scope: "+b)//access var inside the block as well as outside the block
+    }
+    console.log("outside the block:" +b)
+    {
+      const c = "Cycles"
+      console.log("const:block or global: "+c)
+    }
+
+    function Scopes(){
+      {
+        var d = "autos"
+      }
+      return `Access var Outside the block but cannot access outside the function: ${d}`
+    }
+    let Obj = Scopes()
+    console.log(Obj)
+</script>
+</body>
+</html>

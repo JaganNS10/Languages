@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This is object method page</title>
+</head>
+
+<body>
+  <div>
+    <h1>Learning Javascript object_method</h1>
+    <p id="demo">In Javascript object is a container used to store different data in key:pair value or name:value
+      pair.object is a dictionary.It has property and method.property are (name:"jagan")name:value pair and method are
+      (method:function(){return this.name})</p>
+    <h2 id="demo_one"> Method is a function definition stored as a property value</h2>
+  </div>
+  <script>
+    const object = new Object()
+    object.firstname = "senthil"
+    object.lastname = "M.n"
+    object.age = "57"
+    object.method = function () {
+      return this.firstname + " " + this.lastname
+    }
+    //adding new method
+    object.method_two = function () {
+      return this.age
+    }
+    console.log(object.method_two())
+  </script>
+  <button onclick="document.getElementById('demo_one').innerHTML = object.method()">click here</button>
+  <button onclick="document.getElementById('demo').style.display='none'">
+    click here
+  </button>
+  <button onclick="document.getElementById('demo').style.display='block'">
+    click here
+  </button>
+  <p id="demo_two">
+    how method works??.If we declare normal function in Javascript<br>function
+    myfunction(paramater1,paramater2)<br>{<br>
+    return parameter1*parameter<br>
+    }<br>
+    let calling_function = myfunction()
+    like this method also <br>object.method = function()<br>{<br>
+    return this.firstname + " "+this.lastname<br>
+    }<br> here function = function() both are keywords to declare function and method = myfunction() both are function name we calling the object.method() </p>
+    <p id="demo_three"></p>
+
+    <!-- Displaying objects in different ways -->
+    <script>
+      //displaying object using for loop
+
+      const object_one = {name:"Ezhil",age:19,area:"ponneri"}
+      let rx;
+      let text="";
+
+      // like python (for x in object_one:)
+      for(rx in object_one){
+        // console.log(rx) accessing key
+        // console.log(object_one[rx]) accessing value
+
+        console.log(rx + " : "+object_one[rx])
+
+        // text+=rx + " ";
+        // text+=object_one[rx] + " ";
+
+        text+=rx + " : " + object_one[rx]
+      };
+      document.getElementById("demo_three").innerHTML = text;
+    </script>
+
+    <p id="demo-four"></p>
+
+    <script>
+
+      //using object.values() and object.entries()
+      console.log("using values() and entries()")
+      const object_two = {firstname:"sathish",lastname:"M",age:"27"}
+      console.log(Object.values(object_two))
+      console.log(Object.entries(object_two))
+
+      //using for-loop
+
+      console.log("using for-loop")
+      for(let[key,value] of Object.entries(object_two)){
+        console.log(key +":"+value)
+        /* let[key,value] of [Array(2), Array(2), Array(2)]
+        ['firstname', 'sathish']
+        ['lastname', 'M']
+        ['age', '27']*/
+      }
+      //using values
+      for(let y of Object.values(object_two)){
+        console.log(y)
+      }
+
+      // let [key,value]=['firstname','sathish']
+      // console.log(key+":"+value);
+    </script>
+    
+    <button onclick="document.getElementById('demo-four').innerHTML=JSON.stringify(object_two)"> 
+      click here
+    </button>
+</body>
+</html>

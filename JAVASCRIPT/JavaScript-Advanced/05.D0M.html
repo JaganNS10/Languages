@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>05. JavaScript HTML DOM</title>
+</head>
+
+<body>
+  <div>
+    <h1>Learning Html DOM</h1>
+    <p>0th Index of p tag</p>
+    <p>1st Index of p tag</p>
+    <p>2nd Index of p tag</p>
+    <p> 3rd Index of p tag</p>
+    <p id="demo">Inner content Accessed By innerHTML and to find this tag p or class or id this is done my method
+      getElementById(),getElementsByTagName(),getElementByClassName()</p>
+    <p id="demo"></p>
+    <p class="intro"> class with 0th index</p>
+    <p class="intro"> class with 1st index</p>
+    <p id="demo-1"></p>
+    <p id="demo-2"></p>
+    <p id="demo-3"></p>
+    <p class="demo-4"></p>
+    <p class="demo-4"></p>
+
+    <form action="www.google.com" method="post" id="Forms">
+      <div>
+        <label>Firstname</label>
+        <input type="text" value="EnterFirstname" name="Fname">
+      </div>
+      <br>
+      <div>
+        <label>Lastname</label>
+        <input type="text" value="EnterLastname" name="Lname">
+      </div>
+      <br>
+      <br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </div>
+  <script>
+    const tag = document.getElementsByTagName('p');
+    console.log(tag);
+    document.getElementById('demo-1').innerHTML = tag[1].innerHTML;
+
+
+    const Id = document.getElementById('demo');
+    console.log(Id);
+    document.getElementById('demo-2').innerHTML = Id.innerHTML;
+
+    const Class = document.getElementsByClassName('intro');
+    console.log(Class)
+    document.getElementById('demo-3').innerHTML = Class[0].innerHTML
+
+    const QuerySelector = document.querySelectorAll('p.demo-4');
+
+    const Forms = document.forms['Forms']
+    for (let i = 0; i < Forms.length; i++) {
+      console.log(Forms.elements[i].value)
+    }
+  </script>
+  <script>
+    //using forms[] validate the forms
+    /*forms['Forms']['Fname'].forms['Forms'] means it get  id or class with .Forms or Forms.forms['Forms']['Fname'] means it get #Forms or .Forms and <input  type=text name=Fname */
+
+    //NAME VALIDATION
+    function Validate_name() {
+      const Validate_name = document.forms['myForms']['Fname'].value
+      if (Validate_name == "") {
+        alert('LastName is mandatory')
+        // return false
+      }
+    }
+
+    //NUMBERS VALIDATION
+    function Validate_Numbers() {
+      const Validate_Numbers = document.forms['Myforms']['Numbers'].value
+      if (Validate_Numbers >= 0 && Validate_Numbers > 18) {
+        alert("Your age is above 18.You can apply")
+      }
+      else {
+        alert("Your age is below 18.You cannot apply")
+      }
+    }
+  </script>
+
+  <!-- NAME VALIDATION -->
+  <form id="myForms" onsubmit="Validate_name()">
+    Firstname<input type="text" placeholder="EnterFirstname" name="Fname">
+    Lastname<input type="text" name="Fname">
+    <input type="submit" value="submit">
+  </form>
+  <br>
+
+
+  <!-- NUMBER VALIDATION -->
+  <form name="Myforms">
+    <label>Age</label>
+    <input type="number" name="Numbers">
+    <input type="button" name="Button" value="Submit" onclick="Validate_Numbers()">
+    <!-- required -->
+    <br>
+    <label>DOB</label>
+    <input type="date" name="DOB" required>
+    <button>click here</button>
+  </form>
+  <div>
+    <h1 class="CSS">
+      DOM(document object model) it has Two thing method and property like Object() method means getElementById() and
+      property means innerHTML value like this
+    </h1>
+    <button onclick="Css[0].style.fontSize = 'small'">click to see the changes</button>
+    <p id="demo-5"></p>
+    <button id="Event" onclick="disp()">click</button>
+    <h2 id='this' onclick="document.getElementById('this').innerHTML = 'oops'">click here </h2>
+    <h2 onclick="Eveent(this)">click here</h2>
+    <p id="demo-6"></p>
+  </div>
+  <script>
+    let Css = document.getElementsByClassName('CSS')
+    function disp() {
+      document.getElementById('demo-5').innerHTML = Date()
+    }
+    function Eveent(current_object){
+      console.log(current_object)
+      current_object.innerHTML = "Oops!"
+    }
+  </script>
+
+  <form id="forms-1">
+    change the nameinto uppercaseby oninput <input type="text" oninput="OnInput()" name="Upper">
+    <label>change the name lowercase by onchange</label>
+    <input type="text" id="Text" onchange="OnChange()">
+  </form>
+  <p id="mouse" onmouseover="mouseover(this)" onmouseout="mouseout(this)">Mouse over me</p>
+  <p id="mouse-event" onmousedown="mousedown(this)" onmouseup="mouseup(this)" style="background-color: black;color: white;padding: 50px 50px;text-align: center;">change the color into blue</p>
+  <p id="AddEvent">EventAddhandler</p>
+  <script>
+    /*Events
+    oninput
+    onchange
+    onmouseover
+    onmouseout
+    onmousedown
+    onmouseup
+    */
+   function OnInput(){
+    const x  = document.forms['forms-1']['Upper']
+    console.log(x.value)
+    x.value = x.value.toUpperCase()
+   }
+   function OnChange(){
+    const x = document.getElementById('Text')
+    console.log(x)
+    x.value= x.value.toLowerCase()
+   }
+   function mouseover(current){
+    current.innerHTML = 'Thank You'
+   }
+   function mouseout(current){
+    current.innerHTML = 'Mouse over me'
+   }
+   function mousedown(Obj){
+    Obj.style.backgroundColor = 'blue'
+   }
+   function mouseup(Obj){
+    Obj.style.backgroundColor = 'red'
+   }
+   const AddEventHandler = document.getElementById('AddEvent').addEventListener('click',AddEventhandler)
+   function AddEventhandler(){
+    document.getElementById('AddEvent').innerHTML = 'addEventListener is also like onclick'
+   }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>This is Errors Page</title>
+</head>
+
+<body>
+  <div>
+    <h1>Types of Errors In Javascript</h1>
+    <ol>
+      <li>try</li>
+      <li>catch</li>
+      <li>throw</li>
+      <li>finally</li>
+    </ol>
+  </div>
+  <p id="demo-1"></p>
+  <input id="demo-2" type="text">
+  <button type="button" onclick="my()">Input Text</button>
+  <p id="demo-3"></p>
+  <script>
+    // try{
+    //   alert("Good morning....")
+    // }
+    // catch(errors){//we can pass any argument name not only errors
+    //   document.getElementById('demo-1').innerHTML = errors.message;
+    // }
+    function my(){
+      let x = document.getElementById('demo-2').innerHTML= '';
+      // const message = document.getElementById('demo-1');
+      // message.innerHTML =''
+      try{
+        x=Number(x);
+        if (x!=100) throw "Number equal to 100"
+      }
+      catch(err){
+        console.log(err)
+        document.getElementById('demo-1').innerHTML = "Input "+" "+err;
+        // message.innerHTML = "Input is "+" "+err;
+      }
+      finally{
+        document.getElementById('demo-3').innerHTML = "This is finally{} block always executes"
+      }
+    }
+  </script>
+</body>
+
+</html>

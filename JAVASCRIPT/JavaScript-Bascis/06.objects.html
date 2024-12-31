@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Javascript objects</title>
+</head>
+
+<body>
+  <div>
+    <h1 id="demo">This is Javascript lesson</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Et tenetur rerum labore<br> illum, suscipit facere neque
+      qui molestiae! Officiis, molestias similique recusandae<br> ea tenetur sit consequatur fuga consectetur
+      repellendus sunt?
+    </p>
+  </div>
+  <script>
+    //First way to create object and access object
+    const objects = { firstname: "jagan", lastname: "N.S", Age: 20, salary: 200000 }
+    console.log(`Age: ${objects.Age}`) //template string to avoid concatenate
+  </script>
+  <script>
+    //second way to create object and storing values and accessing values[In objects everything is a key:pair value or name:value]
+
+    const objects_Two = new Object()//we can create object with object constructor also
+
+    objects_Two.First_name = "Hemanth"
+    objects_Two.Last_name = "N.S"
+    objects_Two.age = 23
+    objects_Two.salary = 30000
+
+    console.log(objects_Two)
+
+    console.log(objects_Two.secondname)//undefined
+    objects_Two.secondname = "raja"
+    console.log(objects_Two.secondname)
+
+    //console.log(objects_Two[First_name]) //Reference error....because all text or string are stored in object within double quotes excepts numbers ...if you not mention it within double quotes
+
+    console.log(objects_Two["First_name"])
+  </script>
+  <script>
+    const object_Three = {
+      First: "jothi", last: "S", age: 49, salary: "none",
+      access_the_method: function () {
+        return this.First +" "+this.last
+      }
+    };
+    // objects have properties and methods..properties are like this name:"jagan" name:value pair ....methods are (access_the_object:function(){return this.First + this.last }) object_three.name property and object_three.access_the_method()
+  </script>
+  <button onclick=" document.getElementById('demo').innerHTML = object_Three.access_the_method()"> click here</button>
+  <script>
+    const object_four = new Object()
+
+    object_four.firstname= "jagan"
+    object_four.last = "N.S"
+    object_four.age=20
+    object_four.salary = 90000
+    //before changing value 
+    console.log(object_four)
+
+    //after changing the value in object
+    object_four.firstname = "hemanth"
+
+    console.log(object_four)
+    console.log(Object.keys(object_four))
+    console.log(Object.values(object_four))
+    console.log(Object.entries(object_four))
+    const Arr = ["1",2,3,4]
+    console.log(Array.from(Arr.entries()))
+  </script>
+</body>
+
+</html>

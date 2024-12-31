@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Destructuring</title>
+</head>
+<body>
+  <div>
+    <h1>To unpack the properties in Object and assgin to variables</h1>
+    <p>const obj = {name:"jagan",age:19,college:"rkmvc"}<br>let {name,age} = obj<br>let {name,age,college="dgvc"}<br>let {name:age}=obj<br>console.log(age)<br> inside the let {name,age} The name and age have same name in obj</p>
+  </div>
+  <p id="demo-1"></p>
+  <script>
+    const Obj = new Object()
+    Obj.name="jagan"
+    Obj.age = 19
+    Obj.collage = "rkmvc"
+
+    // let {name,age}=Obj //{name,age} the name,age should be same name in Object
+    // console.log(name+" "+age) 
+
+    // let {name,age,college="dgvc"} = Obj
+    // console.log(name+" "+age+" "+ college)
+
+    let {name:age} = Obj
+    console.log(age)
+
+    //using Array
+
+    const str = "w3Schools hello w3Schools"
+    let [a1,a2,a3,a4,a5] = str
+    console.log(a1+a2)
+
+    const Arr = ["No-1","No-2","No-3","No-4","No-5"]
+    let [Arr_1,Arr_2] = Arr
+    console.log(Arr_1,Arr_2)
+
+    let [Arr_3,,,,Arr_4] = Arr//,,,, count this (,) it has 4.so 4-1=3 3 elements skipped
+    console.log(Arr_3,Arr_4)
+
+    let {[3]:Arr_one,[1]:Arr_two} = Arr//[0]:Arr_one....Arr[0]:Arr_one No-1:Arr_one
+    console.log(Arr_one)
+
+    let [a,b,...rest] = Arr
+    console.log(a,b,rest)//... is spread in Javascript *astrick in python
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>chapter 12-Math-date-boolean</title>
+</head>
+<body>
+  <div>
+    <h1>Learning about Math in Javascript</h1>
+  </div>
+  <script>
+    let x = 4.6
+    var y=5.8
+    const z=8.9999 
+    //performing Math operation
+
+    console.log(`using Math.round(x):${Math.round(x)}`)//return Integer
+    console.log(` Using Math.ceil(x): ${Math.ceil(y)}`)//return Integer
+    console.log(`using Math.floor(x):${Math.floor(z)}`)//return Integer
+
+    let a = -12
+    console.log(`using Math.sign(x): ${Math.sign(a)}`)
+    // If a Number is negative it returns -1  and If a Number is  positive it return 1
+
+    console.log(`using Math.pow(x,y): ${Math.pow(8,2)}`)
+
+    console.log(`using Math.sqrt(x): ${Math.sqrt(4)}`)
+
+    console.log(`using Math.abs(x): ${Math.abs(-4.7)}`)
+
+    //Math.random() return a number from 0 to 1
+
+    console.log("Using Math.random(): "+Math.random())
+
+    console.log(`using Math.random() with Math.floor():${Math.floor(Math.random()*10)}`)
+    //Return a Number from 0 to 9 (10) means 10-1=9
+
+    console.log(`Math.floor(Math.random()*100): ${Math.floor(Math.random()*100)}`)
+
+    /*
+    Boolean()  If a variable have a value it return True..If a variable does not have a value means it return false
+    */
+
+    var boolean_1 = 12
+    var boolean_2 = ""
+    console.log("Using Boolean(x):"+Boolean(boolean_1))
+    console.log("using Boolean(x):"+Boolean(boolean_2))
+
+    let c = false//c is a Boolean 
+    const d= new Boolean(false)//d is a object
+    console.log(c==d)//returns true
+    //let c = new Boolean(false) for this it return false.object==object:false 
+
+    //x=0,x=-0,x=null,x=false,x=10/'hello', for this values Boolean() Method return false
+
+    let e = new Date() //Date() is a Object in Js so we Use new Before Date()
+    console.log("using Date(): "+e)
+
+    let g = new Date("2005-01-10")
+    console.log(g.getMonth())
+
+
+    const Month = ["jan","Feb","mar","april","may","jun","july","aug","sep","oct","nov","dec"]
+    let get_Month = new Date()
+    console.log(get_Month.getMonth())//It return Number 5 
+
+    let f = Month[get_Month.getMonth()]//Month[5]
+    console.log(f)
+
+    /*let get_Month = new Date("2024-01-10")
+     console.log(get_Month.getMonth())
+
+     It return the Month in Number suppose if the month is June means it return 5 because it starts from 0-jan,1-feb*/
+  </script>
+</body>
+</html>

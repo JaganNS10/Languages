@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>if-statement page</title>
+</head>
+
+<body>
+  <div>
+    <h1>Learning If-statements</h1>
+  </div>
+  <p id="ptag-01"></p>
+  <p id="ptag-02"></p>
+  <p id="ptag-03"></p>
+  <script>
+    const date = new Date()
+    //return the current hours that means 9:40 9 is the hour
+    if (date.getHours() < 18) {
+      document.getElementById('ptag-02').innerHTML = "if condition is passed in first-case"
+    }
+    else {
+      document.getElementById('ptag-02').innerHTML = "if condition is failed. in first-case"
+    }
+  </script>
+  <script>
+    //else if
+    if (date.getHours() <= 5) {
+      document.getElementById('ptag-03').innerHTML = "if condition is passed. in sec-case"
+    }
+    else if (date.getHours() <= 7) {
+      document.getElementById('ptag-03').innerHTML = "If condition is failed else if is passed in.sec-case"
+    }
+    else {
+      document.getElementById('ptag-03').innerHTML = "if and else if is failed. so else is passed in-second-case"
+    }
+  </script>
+  <script src="externalfile.js">
+
+  </script>
+  <Button onclick="myfunction()">click</Button>
+  <p id="demo-6"></p>
+  <p id="demo-5"></p>
+  <script>
+    /*
+    switch(expression){
+      case condition:
+        code block
+        break
+      case condtion:
+        code block
+        break
+    }
+    */
+    let Day = date.getDay()
+    switch (Day) {
+      case Day == 0:
+        console.log("sunday")
+        break
+      case Day == 1:
+        console.log("Monday")
+        break
+      case Day = 2:
+        console.log("Tuesday")
+        break
+    }
+
+    //using default in switch
+    switch (Day) {
+      case Day == 0:
+        document.getElementById('demo-5').innerHTML = "Today sunday";
+        break
+      case Day == 1:
+        document.getElementById('demo-5').innerHTML = "Today Monday";
+        break
+      default:
+        document.getElementById('demo-5').innerHTML = "Switch is executing default case";
+    } 
+    //using double cases
+
+    switch(date.getDay()){
+      case Day==0:
+      case Day==1:
+        document.getElementById('demo-6').innerHTML = "1.Using double case Atleast one is passed";
+        break
+      case Day=2:
+      case Day=3:
+        document.getElementById('demo-6').innerHTML = "2.Using double case Atleast one is passed"
+    }
+  </script>
+</body>
+
+</html>

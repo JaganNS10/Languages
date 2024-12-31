@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h1 id="demo">Types of variable</h1>
+  </div>
+  <script>
+    var x=30;
+    let y=40;
+  function myfunction(){
+    var x;
+    let y;
+    const z=10;
+    x=10;y=20;
+    console.log(x);
+    console.log(y);
+    console.log(z);
+  }
+  // myfunction()
+  // console.log(x);
+  // console.log(y);
+
+  // (Imp)*If you declare var,let,const in global scope you can use these inside as well as outside the block
+
+  // (Imp)* If you declare var,let,const in block scope you can use these inside the funtion only not in outside the function(reference error)
+  // console.log(z); 
+
+  //declare the var in global scope
+
+  //test() hoisted function
+  function test(){
+    {
+      var d;
+      d=90;
+    }
+    console.log(d);
+  }
+  // console.log(x); It will not print
+  console.log(var_of_hoisted); //undefined
+  var var_of_hoisted;
+  var_of_hoisted=900; 
+  console.log(var_of_hoisted)
+  </script>
+</body>
+
+</html>

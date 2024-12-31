@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+    object_properities
+  </title>
+</head>
+<body>
+  <div>
+    <h1>This is object properties page</h1>
+    <p id="demo"></p>
+  </div>
+  <script>
+    const object = {firstname:"jagan",lastname:"N.S",Age:19}
+    //Accessing properities
+
+    document.getElementById('demo').innerHTML = object.firstname
+
+    console.log(object["lastname"])
+
+    let x;//declaring let variable (undefinied)
+    let y;
+
+    x="Age"
+    y=object.Age
+
+    console.log(object[x])//using expression
+    console.log(y)
+
+  </script>
+
+  <script>
+    //Before adding
+    console.log("Adding new property")
+    console.log(object)
+
+    //Adding new properities
+    object.salary = 50000
+    object.phno = "9381458823"
+    console.log(object)
+
+    //Deleting the existing property
+    delete object.phno
+    console.log("after deleting phno property")
+    console.log(object)
+
+    //changing the existing property value 
+
+    object.salary = object.salary+22500
+    object.Age = 20
+    console.log("changing the salary and Age property value")
+    console.log(object)
+
+    //nested object
+    const object_one = {firstname:"hemanth",lastname:"N.S",nested_object:{Age:20,salary:27800}}
+    console.log("Nested object")
+    console.log(object_one)
+    console.log(object_one.nested_object)
+
+    //Accessing property
+    console.log(object_one.nested_object.Age)
+    console.log(object_one.nested_object["salary"])
+    object_one.nested_object.phno = "9597359086"
+    console.log(object_one["nested_object"]["phno"])
+    
+  </script>
+</body>
+</html>

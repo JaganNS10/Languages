@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Loops Page</title>
+</head>
+
+<body>
+  <section>
+    <h1>Learning About Loops In Javascript</h1>
+  </section>
+  <p id="demo-1"></p>
+  <p id="demo-2"></p>
+  <p id="demo-3"></p>
+  <script>
+    /*
+    Using for loop
+    for(expression 1;expression 2;expression 3;){
+      code block
+    }
+    expression 1:Initializers---runs only once
+    expression 2:condition---check the condition everytime 
+    expression 3:Incre/Decre---i++,i-- Incre/Decre Every-time after the code-block Executed
+    */
+    var text = ""
+    for (let For = 1; For <= 5; For++) {
+      text += "The Number:" + For + "<br>"
+    }
+    document.getElementById('demo-1').innerHTML = text;
+
+    //Using for-in
+    const Dict = { firstname: "jagan", lastname: "N.s", age: 19, salary: 90000 }
+    for (let y in Dict) {
+      console.log(y + ":" + Dict[y])
+    }
+
+    //Using for-of
+    for (let z of Object.values(Dict)) {
+      console.log(z)
+    }
+
+    for (let z of Object.entries(Dict)) {
+      console.log(z)
+    }
+    let Join = ""
+    for (var [name, value] of Object.entries(Dict)) {
+      Join += name + ":" + value + "<br>"
+    }
+    document.getElementById('demo-2').innerHTML = Join;
+    /*
+    why using var[name,value] because Object.entries(Dict) Gives like this  
+    ['first', 'jagan'],['last','N.s'].So In this Array contain two values that is name:value
+    that only we use var[name,value] name='firstname',value='jagan'
+    */
+    const array = [50, 40, 30, 20, 10]
+    var text_3 = ""
+    array.forEach(MyFunction)
+    function MyFunction(value, index, arr) {
+      text_3 += value + "<br>"
+    }
+    document.getElementById('demo-3').innerHTML = text_3
+    // for(let r of  array){
+    //   console.log(r)
+    // }
+  </script>
+  <script>
+    //using while(expression),dowhile()
+    Length = array.length
+    Size = -Infinity
+
+    while (Length--) {
+      if (array[Length] > Size) {
+        Size = array[Length]
+      }
+    }
+    console.log(Size)
+
+    //Using do{} while()
+    len = array.length - 1
+    start = Infinity
+    do {
+      if (array[len] < start) {
+        start = array[len]
+      }
+    }
+    while (len--)
+    console.log(start)
+  </script>
+  <!-- 
+    Array:for-in{},for-of{}
+    Object:for-in{},for-of{}---Object.values(Object-name),Object.entries(Object-name)
+    Set:for-of{},cannot use for-in
+   -->
+</body>
+
+</html>

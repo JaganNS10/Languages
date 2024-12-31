@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>This is Sets and Map page</title>
+</head>
+<body>
+  <div>
+    <ol>
+      <li>Hello</li>
+      <li>World</li>
+      <li>This is ordered List</li>
+    </ol>
+    <ul>
+      <li>Hello</li>
+      <li>World</li>
+      <li>This is Unordered List</li>
+    </ul>
+  </div>
+  <p id="demo-1"></p>
+  <p id="demo-2"></p>
+  <p id="demo-3"></p>
+  <p id="dem0-4"></p>
+  <script>
+    //Creating Set In two ways
+
+    //First way
+    const set = new Set()
+    set.add(1)
+    set.add("Hello")
+    set.add(2)
+    set.add("World")
+    set.add(3)
+    set.add("First way to create set")
+    console.log(set)
+
+    var text_one = ""
+    function MyFunction(set){
+      for(let i of  set){
+        text_one+=i+"<br>"
+      }
+      return text_one
+    }
+    var Call = MyFunction(set)
+
+    //second way
+
+    const second_way = new Set([1,'hello',2,'world',3,'Second way to create set'])
+    console.log(second_way) 
+
+    text_Two = ""
+    var text_Two;//after the text_Two is used then only decleared
+    function MyFunction_one(second_way){
+      for(let j of second_way){
+        text_Two+=j+"<br>"
+      }
+      return text_Two
+    }
+    var call = MyFunction_one(second_way)
+
+    let Values = second_way.values()
+    let Entries  = set.entries()
+
+    for(let k of  Values){
+      var str = ""
+      str+=k
+      console.log(str)
+    }
+    var str_one=""
+    for(let l of Entries){
+      str_one+=l+"<br>"
+    }
+  </script>
+  <button onclick="document.getElementById('demo-1').innerHTML=Call">click</button>
+  <button onclick="document.getElementById('demo-2').innerHTML = call">click</button>
+  <button onclick=" document.getElementById('demo-3').innerHTML = str_one;">click</button>
+  <script>
+    //Maps() Map is same as Object it stores the data in key:value pair using set
+
+    //First way
+    const map = new Map([[1,"apple"],[2,"orange"],[3,"banana"]])
+
+    //second way
+    const Map_Two = new Map()
+    Map_Two.set(1,"jagan")
+    Map_Two.set(2,"hemanth")
+    Map_Two.set(3,"Jothi")
+    console.log(map)
+    console.log(Map_Two)
+
+    let Get = map.get(1)
+    console.log("using map.get(key): "+Get)
+
+    console.log(typeof Map_Two)
+    console.log(Map_Two instanceof Map)
+
+    var Size = map.size
+    console.log(Size)
+
+    /*delete(),clear(),has()
+
+    Map_Two.delete(3)
+    console.log(Map_Two)
+
+    Map_Two.clear()
+    console.log(Map_Two)*/
+
+    let Has = map.has(1)//The has() method true only if the key exists
+    console.log(Has)
+
+    //values(),entries(),forEach()
+
+    for(let Value of Map_Two.values()){
+      console.log(Value)
+    }
+
+    for(let [Key,value] of Map_Two.entries()){
+      console.log(Key+":"+value)
+    }
+
+    map.forEach(Function_forEach)
+    function Function_forEach(values,keys){ 
+      console.log(keys+":"+values)
+    }
+
+    const Arr = [{name:"apple",Q:300},{name:"banana",Q:500},{name:"orange",Q:200}]
+
+    function callback({Q}){ 
+      /* return Q>200?"ok":"low";
+       ? is a if-else operator
+       {Q}:Map(3) {300 => Array(1), 500 => Array(1), 200 => Array(1)}
+       */
+       if(Q>200){
+        return "ok"
+       }
+       else{
+        return "low"
+       }
+    }
+    let Res = Map.groupBy(Arr,callback)//For each Object it calls the callback() function
+    console.log(Res) 
+  </script>
+  <script>
+    //Type converstion
+
+    let Num = 10
+    let Str = "10"
+    let boolean = false
+
+    console.log(String(Num))
+    console.log(Number(Str))
+    console.log(Number(boolean))
+    console.log(String(boolean))
+  </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Javascript strings</title>
+</head>
+
+<body>
+  <div>
+    <h1> Javascript strings</h1>
+  </div>
+  <script>
+    let x = "abababababababbabababbabababba"
+    console.log(x.length)
+    //Extracting string characters
+    //at(),charAt(),charcodeAt(),property access []
+
+    let string = "Hemanth Kumar"
+
+    //using at()
+    let AT = string.at(3)
+    console.log("Using at(): " + AT)
+
+    //using charAt()
+    let CHARAT = string.charAt(3)
+    console.log("Using charAt(): "+CHARAT)
+
+    //using charcodeAt()
+    let CHARCODEAT = string.charCodeAt(3)
+    console.log("Using charcodeAt(): It will print unicode of the character:  "+CHARCODEAT)
+
+    //using []
+    let Property_access = string[3]
+    console.log("Using []:"+Property_access)
+  </script>
+  <script>
+    //Extracting string parts
+    //slice(start,end),substring(start,end),substr(start,end)
+
+    //Using slice(start,end)
+    var SLICE = string.slice(0,6)
+    //string.slice(0)If you ommit end part it will all character in the string
+    console.log("Using slice(start,end): "+SLICE)
+    console.log("Using slice(start,end) negative indexing: "+string.slice(-13,-10))
+    
+    //using substring(start,end)
+    let SUBSTRING = string.substring(0,6)
+    console.log("Using substring(start,end): "+SUBSTRING)// same as slice(start,end)
+
+    //using substr
+
+    let SUBSTR = string.substr(0,6)
+    console.log(`Using substr(from,number): ${SUBSTR}`)
+  </script>
+  <script>
+    /*string methods
+    touppercase(),tolowercase(),concat(),trim(),padStart(),padEnd(),tostring(),repeat(),replace(),replaceAll(),split()*/
+    
+    //uppercase && lowercase
+    let uppercase = x.toUpperCase()
+    let lowecase = x.toLowerCase()
+
+    //concat()
+    let firstname = "Hemanth"
+    let lastname = "Kumar"
+
+    var CONCAT = firstname.concat(" "+lastname)
+    console.log(CONCAT)
+
+    //using trim()
+
+    const text_one = "         hemanth  kumar           "
+    var  TRIM = text_one.trim()
+    console.log("Using trim() we cut the spaces before and after:",TRIM)
+
+    //using padStart(),padEnd() itworks on single character
+    let text_Two = "N"
+    let PADSTART = text_Two.padStart(4,"S")
+    console.log("Using padStart() we 'N.S' STARTING of the string:",PADSTART)
+
+    let PADEND = text_Two.padEnd(4,"S")
+    console.log("Using padEnd() we 'N.S' ENDING of the string:",PADEND)
+
+    //using tostring()
+    let Num = 7
+    let TOSTRING = Num.toString()
+    console.log(typeof TOSTRING + " "+ "Number 7 changed into string: "+TOSTRING)
+
+    //using repeat(),replace()
+
+    let REPEAT = string.repeat(2)
+    console.log("Repeating 2 times: ",REPEAT)
+
+    let text_three = "77"
+    let REPLACE = text_three.replace("7","w3schools")
+    console.log("Using replace(): ",REPLACE)//it only replace the first character
+
+    //To replace all "7"
+
+    let Replace = text_three.replace(/7/g,"w3")
+    console.log("Replace all character using /char/7: ",Replace)
+    //or
+    console.log(text_three.replaceAll("7","33"))
+
+    //using split()
+
+    let Split = string.split("|")
+    console.log(Split)
+  </script>
+  <p id="demo"></p>
+  <script>
+    /*
+    Strings search methods
+    indexOf(),lastIndexOf(),search(),match(),matchAll(),includes(),startwith(),endwith(),
+    */
+   let string_search = "Hello world this is w3schools iam w3schools learning Javascript"
+
+   //using indexof(),lastIndexOf()
+   let INDEXOF = string_search.indexOf("w3schools",25)//it will search after 25 character from begining
+   let LASTINDEXOF = string_search.lastIndexOf("world")
+   console.log(INDEXOF,LASTINDEXOF)
+
+   //using search()
+   let SEARCH  = string_search.search("this")//we cannot use number in search()
+   console.log(SEARCH)
+
+   //using match(),matchAll()
+
+   let MATCH = string_search.match("world")
+   const iterator = string_search.matchAll("w3schools")
+   console.log(MATCH)
+   console.log(Array.from(iterator))
+   
+   //using include()
+   let INCULEDE = string_search.includes("iss")
+   console.log(INCULEDE)
+
+   //using startwith(),endwith()
+
+   let STARTWITH = string_search.startsWith("Hello")
+   var ENDWITH = string_search.endsWith("Javascript")
+
+   console.log(STARTWITH,ENDWITH)
+  </script>
+  <script>
+  </script>
+</body>
+
+
+</html>

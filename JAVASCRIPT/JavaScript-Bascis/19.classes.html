@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Javascript Classes</title>
+</head>
+<body>
+  <div>
+    <p>Javascript Classes</p>
+  </div>
+  <script>
+    class First_class{
+      constructor(first_name,last_name){
+        this.First_name = first_name
+        this.Last_name = last_name
+      }
+    }
+    const Obj_1 = new First_class("jagan","N.S")//why new because it creates Object...
+    console.log(Obj_1.First_name)
+    class Second_class{
+      constructor(department,year){
+        this.Department = department
+        this.Year = year
+      }
+      age(Argument){
+        // const date = new Date()//date.getFullYear() = 2024-2022
+        // return date.getFullYear()-this.Year;
+        return Argument-this.Year;
+      }
+    }
+    const Obj_2 = new Second_class("Bsc.computerscience",2021)
+    const date = new Date()
+    let r = date.getFullYear()//r=2024
+    console.log(Obj_2.age(r))//Obj_2.age(r) means Obj_2.age(2024)...age(x) means Argu=2024
+  </script>
+  <script>
+    //arrows
+    const hello = (a,b)=>{
+      return a+b;
+    }
+    console.log(hello(10,20))
+
+    function Hello(a,b){
+      return a+b
+    }
+    let Res = Hello(10,20)
+    console.log("using Function: "+Res) 
+
+    const One = ()=>{
+      return "hello";
+    }
+    console.log(One())
+
+    //arrow Function is a shorthand property of function() Hello(a,b){} = hello = (a,b)=>{}
+
+    const arr = [1,2,3,4,5,6]
+    let Find = arr.findIndex((element)=>{element>1})
+    console.log(Find)
+  </script>
+</body>
+</html>

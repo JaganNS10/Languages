@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Javascript-Output-lesson</title>
+</head>
+<body>
+  <div>
+    <h1 id="01">This is Html page</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus provident<br> exercitationem earum est facilis blanditiis assumenda quas consequatur doloremque in,<br> officia deserunt nesciunt optio eum vero alias nam, iusto iste!</p>
+    <button onclick="alert('goodmorning!')">click here</button>
+    <button onclick="document.write('This text is done by write()')">This is done by write()</button>
+  </div>  
+  <script>
+    document.getElementById('01').innerHTML = 'I\'m learning Javascript';
+    document.write('This text is done by write():');
+    console.log(10+10);                                 
+  </script>
+   
+  <script>
+      
+  //  Types of variables
+  var x;
+  let y;
+  const z=10; 
+  x=5;
+  y=10
+  // var x=10;
+  // var x;
+  </script>
+  <div>
+    <button onclick="document.getElementById('01').innerHTML = x+y+z;"> click here</button>
+  </div>
+</body>
+</html>

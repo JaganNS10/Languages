@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Advanced-JavaScript</title>
+</head>
+
+<body>
+  <h1>Advanced-JavaScript</h1>
+  <h2>classes and Objects</h2>
+  <p>To invoke a class we must use Object.To create Object we use new keyword</p>
+  <script>
+    class First_class {
+      constructor(First, last) {
+        this.Firstname = First
+        this.Lastname = last
+      }
+      Display(Age) {
+        return this.Firstname + " " + this.Lastname + " " + Age + " " + this.school
+      }
+    }
+    First_class.prototype.school = "Gbhss"
+    const Create_Object = new First_class("Jothi", "S")
+    let Return = Create_Object.Display(47)
+    console.log(Return)
+  </script>
+  <script>
+    //Inheritance
+
+    class Single {
+      constructor(name, age) {
+        this.Name = name
+        this.Age = age
+      }
+      Display() {
+        return this.Name + " " + this.Age
+      }
+    }
+    class Inherit_single extends Single {
+      constructor(name, age, school) {
+        super(name, age)
+        this.school = school
+      }
+    }
+    const Obj = new Inherit_single("jagan", "N.S", "sgrvv")
+    console.log("single Inheritance: " + Obj.Display())
+
+    //Mulit-level Inheritance
+
+    class Main {
+      constructor({ name, age }) {
+        this.Name = name
+        this.Age = age
+      }
+    }
+    class Main2 extends Main {
+      constructor({ school, ...args }) {
+        super(args)
+        this.School = school
+        // console.log(name,age)
+      }
+    }
+
+    class Main3 extends Main2 {
+      constructor({ Class, ...args }) {
+        super(args)
+        this.Cls = Class
+      }
+      Display() {
+        return this.Name + " " + this.Age + " " + this.School + " " + this.Cls
+      }
+    }
+    const Mulitple = new Main3({ age: 19, name: "jagan", school: "gbhss", Class: "12th" })
+    let Return2 = Mulitple.Display()
+    console.log(Return2)
+    //constructor(name,age)=super(name,age) 
+
+    class One {
+      constructor(name) {
+        this.Name = name
+      }
+    }
+    class Two extends One {
+      constructor(name, age, sal) {
+        super(name)
+        this.Age = age
+        this.Salary = sal
+      }
+    }
+    class Three extends Two {
+      constructor(name, age, sal, Join) {
+        super(name, age, sal)
+        this.Joining = Join
+      }
+      Display() {
+        return `My Name is ${this.Name}  My Age is ${this.Age}  My salary is ${this.Salary}  Iam Joined In ${this.Joining}`
+      }
+    }
+    const Ob = new Three("JAGAN", 19, 70000, "29-09-2024")
+    console.log(Ob.Display())
+
+    //Hierhical Inheritance
+
+    class Class {
+      constructor({ Name }) {
+        this.Name = Name
+      }
+    }
+    class Single extends Class {
+      constructor(Name, Age) {
+        super(Name)
+        this.Age = Age
+      }
+      Display() {
+        return this.Name + " " + this.Age
+      }
+    }
+    class One extends Class {
+      constructor({ Age, salary, ...args }) {
+        super(args)
+        console.log(args)
+        this.Age = Age
+        this.Salary = salary
+      }
+    }
+    class Two extends One {
+      constructor({ Phno, ...args }) {
+        console.log(args)
+        super(args)
+        this.Phone = Phno
+      }
+      Display() {
+        return this.Name + " " + this.Age + " " + this.Phone + " " + this.Salary
+      }
+    }
+    const object = new Two({ Name: "Senthil Kumar", Age: 56, salary: 20000, Phno: 9381458823 })
+    // const cl = {Firstname:"Jagan",Age:19,salary:89000}
+    // let {Firstname,...args} = cl
+    // console.log(Firstname,args)
+    const Objects = new Single({ Name: "Jagan" }, 29)
+    console.log(Objects.Display())
+    console.log(object.Display())
+  </script>
+</body>
+
+</html>

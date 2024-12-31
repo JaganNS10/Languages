@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Javascript array</title>
+</head>
+
+<body>
+  <div>
+    <h1>Javascript array</h1>
+    <ul>
+      <li>one</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
+    <ol>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ol>
+  </div>
+  <p id="demo-1"></p>
+  <p id="demo-2"></p>
+  <script>
+    // arrays can be created in three ways
+
+    const Array_one = ["Jagan", "N.S", 19]//First way
+
+    const Array_Two = new Array("Hemanth", "Kumar", 23)
+    //second way usingconstructor newArray()
+
+    const Array_Three = []//third way
+    Array_Three[0] = "Senthil"
+    Array_Three[1] = "Kumar"
+    Array_Three[2] = 57
+
+    //To add Element in array
+    Array_Two[3] = 27000//using index
+    Array_Three.push(19500)//using push() method
+    Array_one[Array_one.length] = "None" //using length
+    console.log(Array_Two, Array_Three, Array_one)
+
+    //To access Array Elements
+    let first = Array_one[0]//accessing first element
+    console.log(first)
+    let second = Array_Three.length - 1 //accessing last element 
+    console.log(Array_Three[second])
+
+    //using for-loop
+    let rx;
+    let Length = Array_Two.length
+    text = "<ul>"
+    for (rx = 0; rx < Length;) {
+      console.log(rx + 1 + ": " + Array_Two[rx])
+      text += "<li>" + Array_Two[rx] + "</li>"
+      rx++;
+    }
+    text += "</ul>" //<ul><li>hemanth</li><li>kumar</li><li>27800</li></ul>
+    document.getElementById('demo-1').innerHTML = text
+    // for(rx=1;rx<=Length;){
+    //   console.log(rx+" "+Array_Two[rx-1])
+    //   rx++;
+    // }
+
+    //In javascript typeof return array as a object to avoid this we can use isarray()
+    console.log(`using typeof:  ${typeof Array_Two}`)
+    console.log(`using Array.isArray():  ${Array.isArray(Array_Two)}`)
+
+  </script>
+  <script>
+    const myobj = { name: "jagan", age: 19, cars: [{ name: "ford", models: ["Fiesta", "focus", "mustang"] }, { name: "BMW", models: ["320", "x3", "x5"] }, { name: "fiat", models: ["500", "panda"] }] }
+    text = ""
+    for (let i in myobj.cars) {
+      console.log(myobj.cars[i])
+      text += "<h1>" + myobj.cars[i].name + "</h1>"
+      for (let j in myobj.cars[i].models) {
+        text += myobj.cars[i].models[j] + "<br>"
+      }
+    }
+    document.getElementById('demo-2').innerHTML = text
+
+    // for(let j in Array_Three){
+    //   console.log(j)
+    // }
+  </script>
+  <script>
+    /*
+    ARRAY METHODS
+
+    length,at(),join(),concat(),pop(),push(),shift(),unshift(),copywithin(),flat(),
+    splice(),tospliced(),slice()
+    */
+
+    //using length
+    const array_four = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    console.log("To Find length: " + array_four.length)
+
+    //using at()
+    var AT = array_four.at(2)
+    console.log("using at(): " + AT+" " + array_four[2])
+
+    //using Join(),toString()
+    const JOIN = ["jagan", "N.S", "19"]
+    console.log("using tostring(): ", JOIN.toString())
+    console.log("using Join(): " + JOIN.join("*"))
+
+    //using pop(),push()
+    var POP = JOIN.pop()
+    console.log("before pop(): " + JOIN)
+    var PUSH = JOIN.push("19")
+    console.log("after push(): " + JOIN)
+
+    //shift(),unshift()
+    const array_Fourr = [1, 2, 3]
+    let SHIFT = array_Fourr.shift()//used to remove first element
+    console.log("using shift(): " + array_Fourr)
+
+    let UNSHIFT = array_Fourr.unshift(1)
+    console.log("using unshift: ", array_Fourr)//used to add element
+
+    //using copywithin(target,start,end)
+    const array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    let COPYWITHIN = array.copyWithin(4, 0, 4)//copywithin(3,0,3)//copywithin(3,0,2)
+    console.log("using copywithin():  "+COPYWITHIN)
+
+    //using splice(start,deletecount,addvalues),tospliced(start,deletecount,addvalue)
+    var arr = [1, 2, 3, 4, 5, 6]
+    // arr.splice(2,2,"lemon","orange")
+    // arr.splice(0,1) used to remove element
+    let TOSPLICE = arr.toSpliced(0,2)//toSpliced(start,end) in this (end-1)
+    //USING toSpliced() is safe because it does not change orginal array
+    console.log("using toSpliced(): "+TOSPLICE)
+
+    //slice()
+    let SLICE = arr.slice(2)
+    console.log("using slice():  "+SLICE)//to create array 
+  </script>
+
+  <script>
+    //array search find(),findIndex(),findLastIndex()
+    /*
+    syntax{
+      array.find(callback(element[,index[,array]])[,thisarg])
+    }
+    */
+    //using find()
+    
+    ARRAY=[1,2,3,13,15,18,19,20]
+    let FIND = ARRAY.find(My_Function)//here My_Function is a callback 
+    function My_Function(value){//value is ARRAY's current element
+      return value>=18
+    }
+    console.log("using find(): "+FIND)
+
+    //using findindex()
+    let FINDINDEX = ARRAY.findIndex(element=>element>=18)
+    console.log("using findIndex(): "+FINDINDEX)
+
+    //using findlastindex()
+    let FINDLASTINDEX = ARRAY.findLastIndex(element=> element>=18)
+    console.log("using findlastIndex():"+FINDLASTINDEX)
+  </script>
+
+  <script>
+    //Javascript sorting Array
+    /*
+    sort(),reverse(),toSorted(),toReversed(),Math.min(),Math.max(),Math.min.apply(null,array),Math.max.apply(0,array)
+    */
+    //using sort method 
+    var a=["d","a","c","b"]
+    const SORT = a.toSorted()//sort()
+    console.log("using toSorted():"+SORT)
+    console.log("using toReversed(): "+SORT.toReversed())
+
+    var a=[40,100,1,5,25,10]
+    /*const Sort= a.toSorted()
+    console.log(Sort)//It will not give correct output so we use compare function*/
+    const Sort = a.sort(function(a,b){return a-b})
+    /*
+    compare function works:
+    first it takes two arguments a,b function(a,b) 
+    a=40,b=100  return a-b : 40-100=-60 
+    *If the result is negative a comes before b
+    *If the result is postive a comes aftore b
+    [40,100,1,5,25,10]
+
+    a=100,b=1 100-1=99 (positive)
+    After changing:[40,1,100,5,25,10]
+
+    a=100,b=5 100-5=95 (positive)
+    [40,1,5,100,25,10]
+
+    a=100 b=25 100-25=75(positive)
+    [40,1,5,25,100,10] 
+    */
+    console.log("Ascending order using compare Function:"+Sort)
+    //desecending order
+    let descen = a.sort(function(a,b){return b-a})
+    console.log("decesending order using compare function: "+descen)
+
+    //using Math.min.apply(),Math.max.apply()
+    let Min = Math.min(40,100,1,5,25,10)
+    let Max = Math.max(40,100,1,5,25,10)
+    console.log("using Math.min(): "+Min)
+    console.log("using Math.max():"+Max)
+
+    let MathMinApply = Math.min.apply(null,a)//null represent thisargs and a is array
+    console.log("using Math.min.apply():"+MathMinApply)
+
+    let element=0
+    let MathMaxApply = Math.max.apply(element,a)// we use element is 0 also
+    console.log("Using Math.max.apply:"+MathMaxApply)
+
+    const OBJECT = [{type:"maruthi",year:2005},{type:"honda",year:2004},{type:"aadi",year:2001}]
+    console.log("using sort() in Objects:")
+    OBJECT.sort(function(a,b){return a.year-b.year})
+    function display(OBJECT){
+      for(let x in OBJECT){
+        for(let y in  OBJECT[x]){
+          console.log(y+":"+OBJECT[x][y])
+        }
+      }
+    }
+    display(OBJECT)
+  </script>
+  <p id="demo-4"></p>
+  <script>
+    //Array iterations
+
+    //using foreach(callbackfunction)
+    /*Arr.foreach(For_each)
+    For Each element in array it call the Fuction (that is callback function) and perform the operations value=element:ex value=40 , index = arrayindex ex:index=0,Arr = Array
+    */
+    const Arr = [40,100,12,20,30,7,5,3,9,11] //why using const because all these methods creates Array
+    Arr.forEach(For_Each)
+    function For_Each(value,index,Arr){
+      console.log(index+":"+value)
+    }
+
+    //using map()
+    /*
+    map is same as foreach..For Each element it call the function passed as argument
+    map creates the new Array.but foreach does not creates array
+    */
+    const Map = Arr.map(Map_Function)
+    function Map_Function(value,index,Arr){
+      // Map.push(value)
+      return value
+    }
+    console.log("using map():"+ Map)
+
+    //flat()
+
+    const Flat = Arr.flatMap((x)=>x*2) 
+    console.log("using flapMap():"+Flat)
+
+    //filter(),every(),some() if the condition is true then the filter() method accept the Array element
+
+    const  Filter = Arr.filter(Filter_Function)
+    function Filter_Function(value){
+       if(value%2!=0){
+        return value
+       }
+    }
+    console.log("using filter():"+Filter)
+
+    //using reduce()
+    /*
+    reduce() is used to add all the Array element it can accept inital value also reduce(callbackfunction,100) Arr = [40,100,12,20,30,7,5,3,9,11] Total=40  value is 100
+    */
+     const Reduce = Arr.reduce(Reduce_Function)
+     /*const Reduce = Arr.reduce(Reduce_Function,1)
+     const Reduce = Arr.reduce(Reduce_Function)*/
+     function Reduce_Function(Total,value,index,arr){
+      console.log("Total:"+Total+" "+"value:"+value)
+      return Total+value
+     }
+     console.log("Final sum using reduce():"+Reduce)
+
+     //using every(),some() these both are same like filter.but every(),some() return boolean values..but filter() return Array
+
+     let Every = Arr.every(Every_Function)
+     //let Every = Arr.some(Every_Function)
+     function Every_Function(value,index,Array){
+      if(value>0){
+        return value
+      }
+     }
+     console.log(Every)//It return true or False
+
+     //using Array.from()
+     let str = "hello world this is w3schools.w3schools welcomes you"
+     let Matchall = str.matchAll("w3schools")
+     console.log(Array.from(Matchall))
+     console.log(Array.from("ABCDEF"))
+
+     //Using Array.keys(),Array.entries(),Array.with()
+     const Keys = Arr.keys()
+     const Entries = Arr.entries()
+     const With = Arr.with(0,1)//to add element in particular index
+     console.log(With)
+
+     for(let rxxx of  Entries){
+      document.getElementById('demo-4').innerHTML+=rxxx+"<br>"
+     }
+     for(let r of  Keys){
+      console.log(Arr[r])
+     }
+  </script>
+  </body>
+
+</html>

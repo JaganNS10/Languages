@@ -1,0 +1,190 @@
+><!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Advanced-JavaScript</title>
+</head>
+<body>
+  <div>
+    <h1>Advanced Object Concepts</h1>
+    <ol>
+      <li>Create Object  by literal {}</li>
+      <li>Create Object by {First:"jagan",last:"N.S"}</li>
+      <li>Create Object by new Object() </li>
+      <li>Create Object By Function()</li>
+    </ol>
+  </div>
+  <p id="demo-1"></p>
+  <p id="demo-2"></p>
+  <script>
+    const object_one = {}
+    object_one.FirstName = "Jagan"
+    object_one.LastName = "N.s"
+    object_one.clg = "Rkmvc"
+    object_one.Age = 19
+    document.getElementById('demo-1').innerHTML =  "Creating Object By {} :" +JSON.stringify(object_one)
+
+    const object_Two = {FirstName:"Hemanth",LastName:"N.S",clg:"Rmk",Age:23}
+    document.getElementById('demo-2').innerHTML = "Creating Object By {Firstname:'hemanth',lastname:'N.s'}: "+JSON.stringify(object_Two)
+
+    const object_Three = new Object()
+
+    object_Three.FirstName = "senthil kumar"
+    object_Three.LastName = "M.N"
+
+    function Creating_More_Object(First,Last,age){
+      this.FirstName = First
+      this.LastName = Last
+      this.Age = age
+      this.Method = function(sal){
+        this.Sal = sal
+        return this.FirstName+" "+this.LastName+" " + this.Sal
+      }
+    }
+
+    const object_Four = new Creating_More_Object("Jothi","S","49")
+    const object_Five = new Creating_More_Object("Hemanth","kb",19)
+    console.log(object_Four)
+    console.log(object_Five)
+
+    console.log(object_Four.Method(29000))
+
+    //Object prototype
+
+    Creating_More_Object.prototype.eye = "black" 
+
+    const object_six = new Creating_More_Object("Ezhil","J.K.V",19)
+
+    Creating_More_Object.prototype.Method_from_prototype = function(){
+      return this.FirstName+" "+this.LastName+" "+this.eye
+    }
+
+    /*console.log(object_Four.Method_from_prototype())
+     console.log(object_Five.Method_from_prototype())*/
+  </script>
+  <p id="demo-3"></p>
+  <script>
+    /*Object Methods
+    let text2 = [['Firstname','jagan'],['lastname','N.S'],['clg','rkmvc'],['Age',19]]*/
+
+    /*using Object.assign(target,source)
+    Object.assign(target,source) here target is the First Object.source is the second Object.In target Object the source will be added.If any value in target Object are equal to source Object value it will replace the source Object value
+    */
+
+    const Obj1 = {Rollno:1,class:"Bsc",Year:2023}
+    const Obj2 = {Rollno:2,class:"Bca",year:"2nd year"}
+
+    console.log(Obj1)
+
+    //using Object.entries(),Object.values()
+
+    console.log(Object.values(Obj1))
+    console.log(Object.entries(Obj2))
+
+    //using Object.fromEntries()
+    
+    const Arr = [['orange',200],['apple',300],['banana',600]]
+    // const map = new Map(Arr)
+    // console.log(map)
+    const Obj3 = Object.fromEntries(Arr)
+
+    const Group = [{name:'orange',Q:200},{name:'banana',Q:300},{name:'apple',Q:400}]
+
+    function call({Q}){
+      if(Q>200){
+        return "Quantity greater then 200"
+      }
+      else{
+        return "Quantity less than 200"
+      }
+    }
+    const By = Object.groupBy(Group,call)
+    console.log(By)
+ </script>
+ <script>
+  /*
+  Object properties
+  Object.defineProperty(objectname,propertykey,descriptor)
+  Object.getPropertyNames(Objectname)
+  */
+
+  // Add a property Obj1.fees = 49000
+  Object.defineProperty(Obj1,"fees",{value:49000})
+  console.log(Obj1)
+
+  //change a property Obj2.year = "3rd year"
+  Object.defineProperty(Obj2,"year",{value:"3rd year"})
+  console.log(Obj2)
+
+  let Get = Object.getOwnPropertyNames(Obj1)
+  console.log(Get)
+
+  Object.defineProperty(Obj1,"Rollno",{writable:false})
+  Obj1.Rollno = 56
+  console.log(Obj1)
+
+  Object.defineProperty(Obj1,"Year",{enumerable:false})
+  let Get2 = Object.getOwnPropertyNames(Obj1)
+  console.log(Get2)
+  console.log("using Object,keys(): will not display Rollno because enumerate:false: "+Object.keys(Obj1))
+
+  /*
+  writable:true property value can be change using Obj1.name = "Jagan"
+  enumerable:true
+
+  writable:false property value cannot be changed
+  enumerable:false property value does not visible 
+  */
+ </script>
+ <script>
+
+  Object.defineProperty(Obj1,"Get",{get:function(){
+    return this.Rollno;
+  }})
+
+  console.log(Obj1.Get)
+  Object.defineProperty(Obj1,"set_Counter",{set:function(value){
+    this.Year = value
+  }})
+  Object.defineProperty(Obj1,"add",{set:function(params){
+    this.Year+=params
+  }})
+
+
+  Obj1.set_Counter = 2022
+  Obj1.add = 2
+  console.log(Obj1.Year)
+ </script>
+ <script>
+  const Methods = {First:"jagan",Last:"N.S",method:function(){
+    return this.First
+  }}
+  Object.defineProperty(Methods,"method_2",{get:function(){return this.Last}})
+  console.log(Methods.method())
+  console.log(Methods.method_2)
+  /*const Methods = {First:"jagan",Last:"N.S",method:function(value){
+    return this.First+" "+value
+    }}
+    const Methods = {First:"jagan",Last:"N.S",method:function(age){
+    this.Age = age
+    return this.First +" "+this.Age
+  }}
+  console.log(Methods.method("N.s"))*/
+
+  //Using getters and setters
+
+  const get_set = {First:"Jagan",Last:"N.S",get function(){return this.First+this.Last}}
+  console.log(get_set.function)
+
+  const Get_Set = {First:"Hemanth",Last:"N.S",set function(value){this.Age = value}}
+  Get_Set.function = 24
+  console.log(Get_Set.Age)
+ </script>
+ <script>
+  const Ob = {first:"varun",last:"L",Age:29}
+
+  Object.preventExtensions(Ob)//we cannot re-assign
+  Object.seal(Ob)//we cannot add or delete
+  Object.freeze(Ob)//we cannot  change
+ </script>
+</body>
+</html>
