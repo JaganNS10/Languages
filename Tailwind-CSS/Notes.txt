@@ -1,0 +1,26 @@
+.container{
+  mx-auto
+  px-10
+}
+mx-auto margin-xaxis 
+margin-left:auto
+margin-right:auto
+
+px-10 padding-xaxis
+padding-left:10px
+padding-right:10px
+
+16px =1rem root:html font-size html{font-size:16px} 1rem = 16px font-size:32px 2rem = 32px
+16px =1em 16/16 32px = 2em 32/16
+
+custom colors
+
+colors:{
+      transparent: 'transparent',
+      current: 'currentColor',
+     'midnight': '#121063',
+     'white': '#ffffff',
+    },
+Media queries
+class="box-border md:box-content"
+it means if the browser screen it greater than or equal to md(768px) the box-content will apply.if the screen lesser than  768px the box-border will apply

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layouts</title>
+  <link rel="stylesheet" href="output.css">
+  <style>
+    .table {
+      margin-left: 20px;
+    }
+
+    .table-cell {
+      padding: 20px;
+      border: 1px solid black;
+      text-align: center;
+    }
+    .table-header-group .table-cell:hover{
+      background-color: gray;
+      color: black;
+    }
+    .table-cell:hover{
+      background-color: blue;
+      color: white;
+    }
+
+    table {
+      border: 1px solid black;
+    }
+
+    table td,
+    th {
+      border: 1px solid black;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mx-auto">
+    <h1 style="font-size:1.5em">class container</h1>
+    <p>class is container mx-auto means (margin-xaxis) x-axis is horizontal left<br>to right when we resize the brower
+      it set the automatic margin</p>
+  </div>
+  <div class="md:container md:bg-slate-500 md:font-bold my-14 md:mx-auto">
+    <h1 style="font-size: 1.5rem;">class container media queries sm,md,lg,xl,2xl</h1>
+    <p> class .container sm-small screen(640px),md-medium screen(768px),lg-large
+      screen(1024px)<br>,xl-xlarge(1280px),2xl-Double xlarge(1536px) all these are min-width only</p>
+  </div>
+
+  <h2 style="font-size:1.5em">class colunms</h2>
+  <div class=" gap-2 md:columns-9">
+    <!-- Using column class we can arrange the elements in colunms vice 
+     gap used to set the width for each colunm 
+     hover:column-9 means if we touch this class it changed into 9 colunms
+     columns-[5rem] we can use particular space between colunms
+     -->
+    <p>Column-1</p>
+    <p>Colunm-2</p>
+    <p>Colunm-3</p>
+    <p>Colunm-4</p>
+    <p>Colunm-5</p>
+    <p>Colunm-6</p>
+    <p>Colunm-7</p>
+    <p>Colunm-8</p>
+    <p>Colunm-9</p>
+  </div>
+
+  <h2 style="font-size: 1.5em; margin-top: 40px;">class break-after </h2>
+  <!-- class="break-after" break-after-auto,break-after-avoid,break-after-all,break-after-avoid-page,break-after-page,break-after-left,break-after-right,break-after-column  
+    -->
+  <div class="columns-2">
+    <p>Colunm-1</p>
+    <p class="break-after-column">Colunm-2 break-after this colunm</p>
+    <p>Colunm-3</p>
+    <p>Colunm-4</p>
+    <p>Colunm-5</p>
+    <p>Colunm-6</p>
+    <p>Colunm-7</p>
+  </div>
+  <h2 style="font-size: 1.5em; margin-top: 40px;">class break-before</h2>
+  <div class="columns-2">
+    <p>Column-1</p>
+    <p class="break-before-column">Column-3 break-before this colunm</p>
+    <p>Column-4</p>
+    <p>Column-5</p>
+    <p>Column-6</p>
+    <p>Column-7</p>
+    <p>Column-8</p>
+  </div>
+  <h2 style="font-size: 1.5em; margin-top: 40px;">class break-inside</h2>
+  <div class="hover:break-inside-avoid-column">
+    <p>Column-1</p>
+    <p>colunm-2,column-3,colunm-4</p>
+    <p>Column-3</p>
+    <p>Column-4</p>
+  </div>
+  <h2 style="font-size: 1.5em; margin-top: 40px;">class break-after-page print this to see the result</h2>
+  <div>
+    <div class="break-before-page">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum commodi suscipit, vel, sint odit eum eveniet
+      temporibus voluptates distinctio quia recusandae ducimus architecto voluptate labore reiciendis earum. Natus,
+      quasi in.
+    </div>
+    <div>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum commodi suscipit, vel, sint odit eum eveniet
+      temporibus voluptates distinctio quia recusandae ducimus architecto voluptate labore reiciendis earum. Natus,
+      quasi in.
+    </div>
+  </div>
+
+  <h2 style="font-size: 1.5em; margin-top: 40px;">class box-decoration-slice and box-decoration-clone</h2>
+  <div class="box-decoration-slice  w-32 px-2  bg-gradient-to-r from-indigo-600 to-pink-500 text-white ">
+    <span>Hello<br>world</span>
+  </div>
+  <div class="box-decoration-clone bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 my-5 w-32">
+    <span>Hello<br>world</span>
+  </div>
+  <div class="box-border h-full w-full p-10 border-4 border-red-800 text-purple-700 ">
+    <h2 style="font-size: 1.5em;margin-top: 20px;">class box-border</h2>
+    <p>box-border set the border for iniside the box-content height-full width-full border-4 set the
+      left-right(x),top-bottom(y)-4 md:box-content it adjust the box content when the browser under 768px</p>
+  </div>
+  <div class="box-content h-full w-32 p-4 border-4 border-red-800 text-purple-700 my-14">
+    <h2 style="font-size: 1.5em;margin-top: 20px;">class box-border</h2>
+    <p>box-border hight*width 32*32 includes padding-4px.but box-content 48*48 because 32+4+4+4+4 padding:top right
+      bottom left</p>
+  </div>
+  <div class="md:container md:m-auto">
+    <h2 style="font-size: 1.5em;padding:20px 35px;">class display</h2>
+    <div class="inline-block px-10">
+      <!-- <p class="inline">Using display:inline</p>
+    <p class="inline">Using display:inline</p>
+    <p class="inline">Using display:inline</p> -->
+      <p>One</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="inline-block px-10">
+      <!-- <p class="inline-block">Using display:inline-block</p>
+    <p class="inline-block">Using display:inline-block</p>
+    <p class="inline-block">Using display:inline-block</p> -->
+      <p>Two</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="inline-block px-10">
+      <!-- <p class="inline-block">Using display:inline-block</p>
+    <p class="inline-block">Using display:inline-block</p>
+    <p class="inline-block">Using display:inline-block</p> -->
+      <p>Three</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="m-10">
+      <span class="flow-root">Using display:block or flow-root</span>
+      <span class="flow-root">One</span>
+      <span class="flow-root">Two</span>
+      <span class="flow-root">Three</span>
+    </div>
+    <h2 style="font-size: 1.5em;">Using class grid</h2>
+    <div style="display:grid;grid-template-columns: repeat(3,1fr);grid-gap:40px;">
+      <p>Grid-1</p>
+      <p>Grid-2</p>
+      <p>Grid-3</p>
+      <p>Grid-4</p>
+      <p>Grid-5</p>
+      <p>Grid-6</p>
+      <p>Grid-7</p>
+      <p>Grid-8</p>
+      <p>Grid-9</p>
+    </div>
+    <div class="grid grid-cols-3 grid-row-3 gap-5 my-10">
+      <p>Grid-1</p>
+      <p>Grid-2</p>
+      <p>Grid-3</p>
+      <p>Grid-4</p>
+      <p>Grid-5</p>
+      <p>Grid-6</p>
+      <p>Grid-7</p>
+      <p>Grid-8</p>
+      <p>Grid-9</p>
+    </div>
+    <h2 style="font-size: 1.5em;">Using class inline-grid</h2>
+    <div class="inline-grid grid-cols-3 gap-4">
+      <span>Grid-1</span>
+      <span>Grid-2</span>
+      <span>Grid-3</span>
+      <span>Grid-4</span>
+      <span>Grid-5</span>
+      <span>Grid-6</span>
+    </div>
+    <div class="inline-grid grid-cols-3 gap-4">
+      <span>Grid-1</span>
+      <span>Grid-2</span>
+      <span>Grid-3</span>
+      <span>Grid-4</span>
+      <span>Grid-5</span>
+      <span>Grid-6</span>
+    </div>
+    <div class="table my-10 md:table md:m-auto">
+      <div class="table-header-group">
+        <div class="table-row px-8">
+          <div class="table-cell text-left...">Song</div>
+          <div class="table-cell text-left...">Artist</div>
+          <div class="table-cell text-left...">Design</div>
+        </div>
+      </div>
+      <div class="table-row-group">
+        <div class="table-row">
+          <div class="table-cell">Baby</div>
+          <div class="table-cell">Justin bieber</div>
+          <div class="table-cell">Design</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Baby</div>
+          <div class="table-cell">Justin bieber</div>
+          <div class="table-cell">Design</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Baby</div>
+          <div class="table-cell">Justin bieber</div>
+          <div class="table-cell">Design</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Baby</div>
+          <div class="table-cell">Justin bieber</div>
+          <div class="table-cell">Design</div>
+        </div>
+        <div class="table-row">
+          <div class="table-cell">Baby</div>
+          <div class="table-cell">Justin bieber</div>
+          <div class="table-cell">Design</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 style="font-size: 1.5em; margin-top: 40px;">class float float-left,right,start</h2>
+  <div>
+    <img src="One.webp" alt="Image-1" class="w-60 float-start md:float-end">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae eveniet suscipit nobis repudiandae molestiae,
+      illo<br>
+      iure quasi ipsam facilis ipsa expedita asperiores obcaecati nam ab consectetur nostrum provident quas itaque!<br>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex hic recusandae consectetur architecto expedita.<br>
+      Voluptatem maiores optio officia dolores deserunt dolore id neque. Quis aliquid optio, temporibus nobis soluta
+      fugit?
+    </p>
+    <div class="clear-both"></div>
+  </div>
+  <div>
+    <h2 style="font-size: 1.5em;">class Object fit.Object-cover,object-fill,object-contain,object-scale-down</h2>
+    <div class=" bg-indigo-300">
+      <img src="One.webp" alt="Image-2" class="w-96 h-48 object-cover">
+    </div>
+    <div class=" bg-indigo-300 my-10">
+      <img src="One.webp" alt="Image-2" class="w-96 h-48 object-contain">
+    </div>
+    <div class="bg-indigo-300 my-10">
+      <img src="One.webp" alt="Image-2" class="w-96 h-48 object-fill">
+    </div>
+    <div class="bg-indigo-300 my-10">
+      <img src="One.webp" alt="Image-2" class=" w-96 h-48 object-scale-down">
+    </div>
+    <div class="bg-indigo-300 my-10 ">
+      <img src="One.webp" alt="Image-2" class="w-96 h-48 object-none object-left">
+    </div>
+  </div>
+  <div>
+    <h2 style="font-size: 1.5em;">class object position</h2>
+    <!-- Note Object-none means it will zoom the image.In that zoomed Image only this object postions(center,left,left-top,left-bottom,right,right-top,right-bottom,top,bottom) this postions are act in that zoomed image  -->
+    <img src="images (1).jpeg" class="w-96 h-48 py-5 object-none">
+    <img src="images (1).jpeg" class="object-none object-center w-96 h-48 py-5">
+    <img src="images (1).jpeg" class="object-none object-left w-96 h-48 py-5">
+    <img src="images (1).jpeg" class="object-none  object-left-top w-96 h-48 py-5">
+    <img src="images (1).jpeg" class="object-none  object-left-bottom w-96 h-48 py-5">
+    <img src="images (1).jpeg" class="object-none  object-right w-96 h-48 py-5">
+    <img src="images (1).jpeg" class="object-none  object-right-top w-96 h-48 py-5">
+    <img src="images (1).jpeg" class="object-none  object-right-bottom w-96 h-48 py-5">
+    <img src="images (1).jpeg" class="object-none  object-top w-96 h-48 py-5">
+    <img src="images (1).jpeg" class="object-none  object-bottom w-96 h-48 py-5">
+  </div>
+  <div>
+    <h2 style="font-size: 1.5em;">class overflow</h2>
+    <div class="border-2 border-green-700 h-40">
+      <h2 style="font-size: 1.5em;">overflow-visible</h2>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>Porro neque vitae fugiat illo voluptatem reiciendis
+      ducimus<br>dolore et, at cum cumque repellendus tempore soluta maiores minus<br>praesentium? Eius, voluptatum
+      esse?
+      Lorem ipsum dolor sit amet,<br>consectetur adipisicing elit.Porro neque vitae fugiat illo<br>voluptatem reiciendis
+      ducimus dolore et, at cum cumque<br>repellendus tempore soluta maiores minus<br>praesentium? Eius, voluptatum
+      esse?
+    </div>
+    <div class="border-2 border-green-700 h-40 my-28 overflow-hidden">
+      <h2 style="font-size: 1.5em;">overflow-hidden</h2>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>Porro neque vitae fugiat illo voluptatem reiciendis
+      ducimus<br>dolore et, at cum cumque repellendus tempore soluta maiores minus<br>praesentium? Eius, voluptatum
+      esse?
+      Lorem ipsum dolor sit amet,<br>consectetur adipisicing elit.Porro neque vitae fugiat illo<br>voluptatem reiciendis
+      ducimus dolore et, at cum cumque<br>repellendus tempore soluta maiores minus<br>praesentium? Eius, voluptatum
+      esse?
+    </div>
+    <div class="overflow-x-auto">
+      <h2 style="font-size: 1.5em;margin-bottom: 20px;">overflow-auto overflow-x-auto,overflow-y-auto</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Head1</th>
+            <th>Head2</th>
+            <th>Head3</th>
+            <th>Head4</th>
+            <th>Head5</th>
+            <th>Head6</th>
+            <th>Head7</th>
+            <th>Head8</th>
+            <th>Head9</th>
+            <th>Head10</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>One</td>
+            <td>Two</td>
+            <td>Three</td>
+            <td>Four</td>
+            <td>Five</td>
+            <td>Six</td>
+            <td>Seven</td>
+            <td>Eight</td>
+            <td>Nine</td>
+            <td>Ten</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="overflow-x-scroll my-10">
+      <h2 style="font-size: 1.5em;margin-bottom: 20px;">overflow-scroll overflow-x-scroll,overflow-y-scroll</h2>
+      <table>
+        <tr>
+          <th>Head1</th>
+          <th>Head2</th>
+          <th>Head3</th>
+          <th>Head4</th>
+          <th>Head5</th>
+          <th>Head6</th>
+          <th>Head7</th>
+          <th>Head8</th>
+          <th>Head9</th>
+          <th>Head10</th>
+        </tr>
+        <tr>
+          <td>One</td>
+          <td>Two</td>
+          <td>Three</td>
+          <td>Four</td>
+          <td>Five</td>
+          <td>Six</td>
+          <td>Seven</td>
+          <td>Eight</td>
+          <td>Nine</td>
+          <td>Ten</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="my-10">
+    <h2 style="font-size: 1.5em;margin-bottom: 20px;">class overscroll</h2>
+    <h2 style="font-size: 1.5em;">overscroll-behavior:auto</h2>
+    <div class="border-4 w-56 h-96 overflow-scroll overscroll-auto">
+      <p>overscroll-behavior:auto if I reach the end of the scrollable element then,it will scroll the webpage</p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <h2 style="font-size: 1.5em;">overscroll-behavior:contain</h2>
+    <div class="border-4 w-56 h-96 overflow-scroll overscroll-contain my-10 ">
+      <p>overscroll-behavior:contain if I reach the end of the scrollable element then,it will not scroll the webpage
+      </p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <h2 style="font-size: 1.5em;">overscroll-behavior:none</h2>
+    <div class="border-4 w-56 h-96 overflow-scroll overscroll-none my-10 ">
+      <p><overscroll-behavior:none></overscroll-behavior:none> if I reach the end of the scrollable element then,it will
+        not scroll the webpage</p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p class="py-20">Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+  <h2 style="font-size: 1.5em;margin-top: 30px;">class Positions</h2>
+  <div>
+    <div class="sticky top-0">
+      <p style="background-color: black;color: white;text-align: center;padding: 20px;">position:sticky</p>
+    </div>
+    <div class="my-10">
+      ONE: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro rem delectus<br> explicabo id beatae officia!
+      Unde a quos blanditiis dolorum tempore facilis nam<br> maxime corrupti dolore. Provident repellendus mollitia
+      illo?
+    </div>
+    <div class="my-10">
+      TWO: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro rem delectus<br> explicabo id beatae officia!
+      Unde a quos blanditiis dolorum tempore facilis nam<br> maxime corrupti dolore. Provident repellendus mollitia
+      illo?
+    </div>
+    <div class="my-10">
+      THREE: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro rem delectus<br> explicabo id beatae
+      officia! Unde a quos blanditiis dolorum tempore facilis nam<br> maxime corrupti dolore. Provident repellendus
+      mollitia illo?
+    </div>
+    <div>
+      FOUR: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro rem delectus<br> explicabo id beatae
+      officia! Unde a quos blanditiis dolorum tempore facilis nam<br> maxime corrupti dolore. Provident repellendus
+      mollitia illo?
+    </div>
+    <div class="my-10 fixed bottom-0 right-0">
+      <button
+        style="background-color: burlywood;color: beige;border: 1px solid burlywood;padding: 15px 50px;border-radius: 40px;font-size: large;font-weight: bold;">
+        Fixed
+      </button>
+    </div>
+    <div>
+      <h2 style="font-size: 1.5em; margin-top: 30px;">Class Visiblity(invisible,hidden,collapse)</h2>
+      <div class="grid grid-cols-3 my-10">
+        <p class="border-2 border-red-500 w-12 h-12">01</p>
+        <p class="border-2 border-red-500 w-12 h-12 invisible">02</p>
+        <p class="border-2 border-red-500 w-12 h-12">03</p>
+      </div>
+      <div class="table">
+        <div class="table-header-group">
+          <div class="table-row">
+            <p class="table-cell">id</p>
+            <p class="table-cell">Name</p>
+            <p class="table-cell">Age</p> 
+          </div>
+        </div>
+        <div class="table-row-group">
+          <div class="table-row">
+            <p class="table-cell">01</p>
+            <p class="table-cell">Jagan</p>
+            <p class="table-cell">19</p>
+          </div>
+          <div class="table-row">
+            <p class="table-cell">02</p>
+            <p class="table-cell">Heman</p>
+            <p class="table-cell">19</p>
+          </div>
+          <div class="table-row collapse hover:visible">
+            <p class="table-cell">03</p>
+            <p class="table-cell">Kb Hemanth</p>
+            <p class="table-cell">19</p>
+          </div>
+          <div class="table-row">
+            <p class="table-cell">04</p>
+            <p class="table-cell">Ezhil</p>
+            <p class="table-cell">19</p>
+          </div>
+          <div class="table-row">
+            <p class="table-cell">05</p>
+            <p class="table-cell">sabari</p>
+            <p class="table-cell">19</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-rows-3 my-10">       
+        <a class="border-2 border-red-500 w-12 h-12 ">One</a>
+        <a class="border-2 border-red-500 w-12 h-12 hidden">Two</a>
+        <a class="border-2 border-red-500 w-12 h-12 ">Three</a>
+      </div>
+    </div>
+    <div>
+      <h2 style="font-size: 1.5em;">class z-index</h2>
+    </div>
+    <div style="padding-bottom: 1000px;"></div>
+</body>
+
+</html>

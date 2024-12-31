@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sizing</title>
+  <link rel="stylesheet" href="output.css">
+  <style>
+    h2 {
+      font-size: 1.5rem;
+      margin-left: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>width px w-1,w-2,...</h2>
+  <div class="m-10">
+    <p class="border-2 border-green-500 p-5 w-24">w-24</p>
+    <p class="border-2 border-green-500 p-5 w-32">w-32</p>
+    <p class="border-2 border-green-500 p-5 w-40">w-40</p>
+    <p class="border-2 border-green-500 p-5 w-48">w-48</p>
+    <p class="border-2 border-green-500 p-5 w-64">w-64</p>
+    <p class="border-2 border-green-500 p-5 w-80">w-80</p>
+    <p class="border-2 border-green-500 p-5 w-96">w-96</p>
+  </div>
+  <h2>width percentage w-full,w-1/2...</h2>
+  <div class="m-10 space-y-10">
+    <a class="border-2 border-orange-800 p-5">Hello World!</a>
+    <p class="border-2 border-orange-800 p-5 w-full">Hello World!</p>
+    <p class="border-2 border-orange-800 p-5 w-1/2">Hello World!</p>
+    <p class="border-2 border-orange-800 p-5 w-1/3">Hello World!</p>
+    <p class="border-2 border-orange-800 p-5 w-1/4">Hello World!</p>
+    <p class="border-2 border-orange-800 p-5 w-1/6">Hello World!</p>
+  </div>
+  <h2>class min-width</h2>
+  <div class="m-10 w-1/2 border-2 border-red-700 p-10">
+    <p class="border-2 border-red-500 p-5 min-w-96">Min-width</p>
+    <p class="border-2 border-red-500 p-5 min-w-80 mt-4">Min-width</p>
+    <p class="border-2 border-red-500  p-5 min-w-64 mt-4">Min-width</p>
+    <p class="border-2 border-red-500 p-5 min-w-56 mt-4">Min-width</p>
+    <p class="border-2 border-red-500 p-5 min-w-96 mt-4">Min-width</p>
+  </div>
+  <h2>class max-width</h2>
+  <div class="m-10 w-1/2 border-2 border-red-600 p-10">
+    <p class="border-2 border-red-500 p-5 max-w-96">Max-width</p>
+    <p class="border-2 border-red-500 p-5 max-w-80 mt-4">Max-width</p>
+    <p class="border-2 border-red-500  p-5 max-w-64 mt-4">Max-width</p>
+    <p class="border-2 border-red-500 p-5 max-w-56 mt-4">Max-width</p>
+    <p class="border-2 border-red-500 p-5 max-w-96 mt-4">Max-width</p>
+  </div>
+  <!-- min-w-96 means if the browser comes under 384px the min-width maintain the elements size 384px  -->
+  <!-- max-w-96 means if the browser comes above 384px the max-width maintain the elements size 384px  -->
+  <h2>class Height h-* min-h-*,max-h-*</h2>
+  <div class="border-2 border-lime-800 m-10 p-10 space-y-10">
+    <p class="border-2 border-fuchsia-900 p-5 h-16 md:h-96">h-96</p>
+    <p class="border-2 border-fuchsia-900 p-10 h-80">h-80</p>
+    <p class="border-2 border-fuchsia-900 p-10 h-64">h-64</p>
+    <p class="border-2 border-fuchsia-900 p-10 h-48">h-48</p>
+    <p class="border-2 border-fuchsia-900 p-10 h-32">h-32</p>
+  </div>
+  <h2>size</h2>
+  <div class="border-2 border-red-600 m-10 p-10 space-y-10">
+    <p class="border-2 border-fuchsia-900 p-5 size-36">size-16</p>
+    <p class="border-2 border-fuchsia-900 p-5 size-96">size-96</p>
+  </div>
+  <div style="padding-bottom: 1000px;"></div>
+</body> 
+</html>
