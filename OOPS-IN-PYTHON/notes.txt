@@ -1,0 +1,48 @@
+How __repr__ method works 
+
+This method returns a string representation of the object, 
+containing the values of the Name, Price, and Quantity attributes of the instance.
+
+So when you print an instance of the using_constructor class, like print(object1), 
+Python will use the __repr__ method to get the string representation, 
+which will be in the format: using_constructor(name, price, quantity), 
+where name, price, and quantity are the actual values of the attributes of the object.
+
+For example, print(object1) would output something like: using_constructor(phone, 100, 2) 
+based on the values you provided when creating object1.
+
+class funtion():
+    def __init__(self,name,sal):
+        print("First constructor is invoked")
+    @classmethod
+    def display(cls):
+        funtion("jagan",19)
+        print("Second this will print")
+funtion.display()
+# funtion("jagan",19)
+
+On the other hand, within the instantiate_from_csv method, 
+when you create instances of the class using using_constructor(...), 
+you're also calling the constructor to create new instances. 
+The difference is that in this case, you're using the class name (using_constructor) followed by parentheses, 
+which is a shorthand way to call the constructor without explicitly creating an instance variable.
+
+So, in both cases (object = using_constructor() and within instantiate_from_csv method),
+ you're calling the constructor and creating instances of the class. 
+ The difference lies in how you're referencing the class: 
+ directly as a class name (using_constructor) or indirectly via a variable (object).
+
+
+
+Opening and Reading the CSV File:
+
+with open('D:/python2/Study/Main.csv','r') as f:
+:This line opens the CSV file located at 'D:/python2/Study/Main.csv' in read mode 
+and assigns it to the file object f.
+
+reader = csv.DictReader(f): This line creates a CSV reader object (DictReader) from the file object f. 
+It reads the CSV file and treats each row as a dictionary 
+where the keys are taken from the first row (header) of the CSV file.
+
+items = list(reader): This line reads all the rows from the CSV file using the reader and 
+converts them into a list of dictionaries. Each dictionary represents a row of data from the CSV file.
